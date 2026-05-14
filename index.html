@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santi | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .tag {
+            color: #888;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #b3b3b3;
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 14px;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: white;
+            color: black;
+        }
+
+        .secondary {
+            border: 1px solid #333;
+            color: white;
+        }
+
+        .buttons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 60px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <p class="tag">Backend Developer in Training</p>
+
+        <h1>Hi, I'm Santi 👋</h1>
+
+        <p class="description">
+            Programming student at UTN focused on backend development,
+            APIs, databases and scalable applications.
+        </p>
+
+        <div class="buttons">
+            <a href="https://github.com/santigvadone" target="_blank" class="primary">GitHub</a>
+            <a href="https://linkedin.com/in/santiago-gabriel-vadone" target="_blank" class="secondary">LinkedIn</a>
+            <a href="mailto:santiagogabrielvadone@outlook.com" class="secondary">Contact</a>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Backend</h2>
+                <p>
+                    Node.js, Express, APIs and server-side development.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Databases</h2>
+                <p>
+                    SQL, relational databases and data modeling.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Learning</h2>
+                <p>
+                    Improving my skills through personal projects and university.
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Santi — Simple Portfolio
+        </footer>
+    </div>
+
+    <script>
+        console.log("Portfolio loaded successfully 🚀")
+    </script>
+
+</body>
+
+</html>
