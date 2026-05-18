@@ -45,75 +45,61 @@ header > a:hover {
 
 .container {
   max-width: 1000px;
-  width: 60%;
+  width: 70%;
   min-width: 400px;
   text-align: center;
   padding-top: 50px;
 }
 
 #home {
-  border: 1px solid #333;
-  border-radius: 35px;
-  padding: 0px 20px 0px 0px;
-  margin: 30px 0px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 90px;
 }
 
 .presentation {
-  margin-left: 0px;
-  width: 70%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border: 1px solid #333;
+  border-radius: 35px;
+  margin: 30px 0px;
+  padding: 0px 15px 10px 0px;
+  display: block;
+  text-align: justify;
+  overflow: hidden;
 }
 
 .image-container {
-  min-height: 250px;
-  min-width: 250px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 
-  max-width: 300px;
-  max-height: 300px;
+  float: left;
+  shape-outside: circle(50%);
 
-  border-radius: 9999px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 20px;
+  overflow: hidden;
   border: 1px solid white;
 }
 
-.tag {
-  color: #888;
-  letter-spacing: 4px;
-  font-size: 20px;
-  text-transform: uppercase;
+.image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
+.presentation > h1 {
+  flex-wrap: wrap;
+  font-size: 32px;
+  text-align: center;
 }
 
-.description {
-  color: #b3b3b3;
-  font-size: 20px;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
+.presentation > p {
+  text-align: justify;
+  font-size: 18px;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-bottom: 60px;
 }
 
 .buttons a {
@@ -121,7 +107,15 @@ h1 {
   padding: 14px 28px;
   border-radius: 14px;
   transition: 0.2s;
-  font-weight: bold;
+  font .description {
+    color: #b3b3b3;
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  -weight: bold;
 }
 
 .primary {
