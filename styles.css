@@ -3,7 +3,20 @@
 }
 
 body {
-  background: #0a0a0a;
+  background-color: black;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, #38bdf866 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, #8a5cf54d 0%, transparent 70%),
+    radial-gradient(
+      ellipse at 60% 20%,
+      rgba(236, 72, 153, 0.25) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 40% 80%,
+      rgba(34, 197, 94, 0.2) 0%,
+      transparent 65%
+    );
   color: white;
   min-height: 100vh;
   display: flex;
@@ -14,13 +27,24 @@ body {
 header {
   position: fixed;
   top: 0;
-  margin-top: 10px;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+
+  background-color: rgba(11, 14, 20, 0.05);
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 5px;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
-  width: 60%;
-  min-width: 400px;
+
+  display: inline block;
+
+  height: min-content;
 }
 
 header > a {
@@ -31,18 +55,20 @@ header > a {
   padding: 7px 14px;
   border-radius: 14px;
   font-weight: bold;
-  border: 1px solid #333;
-  color: white;
-  background-color: #0a0a0a;
+  color: lightgray;
 }
 
 header > a:hover {
   transform: translateY(-3px);
   transition: 200ms;
-  background: white;
+  background: #ffffff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 6%,
+    rgba(54, 54, 54, 1) 100%
+  );
   color: black;
 }
-
 .container {
   max-width: 1000px;
   width: 70%;
@@ -51,62 +77,77 @@ header > a:hover {
   padding-top: 50px;
 }
 
-#home {
+#about {
   scroll-margin-top: 90px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.intro {
+  font-size: 60px;
+  margin-bottom: 0;
+  cursor: pointer;
 }
 
-.presentation {
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 20px;
-  margin: 30px 0px;
-  padding: 0px 15px 10px 0px;
+.nombre {
+  font-size: 80px;
+  font-weight: bold;
+  background: linear-gradient(180deg, #00f2ff, #7e57c2);
 
-  text-align: center;
-  justify-content: center;
-
-  overflow: hidden;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.image-container {
-  width: 250px;
-  height: 250px;
+.tag {
+  margin-top: 0px;
+  margin-bottom: 10px;
 
-  min-height: 250px;
-  max-height: 250px;
-
-  min-width: 250px;
-  max-width: 250px;
-
-  border-radius: 30px;
-
-  float: left;
-
-  margin: 20px;
-  overflow: hidden;
-
-  border: 1px solid #333;
+  font-size: 25px;
+  color: lightgray;
+  cursor: pointer;
 }
 
-.image-container > img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.presentation > h1 {
-  flex-wrap: wrap;
-  font-size: 30px;
-  text-align: center;
-}
-
-.presentation > p {
+.desc {
+  width: 85%;
   text-align: center;
   font-size: 18px;
+  color: lightgray;
+  cursor: pointer;
 }
 
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.skills::-webkit-scrollbar {
+  display: none;
+}
+
+.skills > p {
+  margin: 0;
+  padding: 8px;
+  border-radius: 35px;
+  color: lightgray;
+  background: linear-gradient(180deg, #0b0e14, #181125);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.skills > p:hover {
+  background: white;
+  color: rgb(37, 37, 37);
+  transform: translateY(-3px);
+  transition: 300ms;
+}
+
+/*ACA TERMINA LA PARTE DEL ABOUT ME*/
 .buttons {
   display: flex;
   justify-content: center;
@@ -123,21 +164,23 @@ header > a:hover {
 }
 
 .primary {
-  border: 1px solid #333;
+  background-color: #0b0e14;
   color: white;
+  background: linear-gradient(180deg, #0b0e14, #181125);
 }
 
 .primary:hover {
-  background: white;
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 6%,
+    rgba(54, 54, 54, 1) 100%
+  );
   color: black;
 }
 
 .buttons a:hover {
   transform: translateY(-3px);
-}
-
-#about {
-  scroll-margin-top: 80px;
 }
 
 .contenedor-carrusel {
@@ -156,43 +199,24 @@ header > a:hover {
   padding-bottom: 15px;
 }
 
-.cards-carrusel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-
-  border: 1px solid #222;
-  background: #111;
-  text-align: left;
-
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: center;
-}
-
-.cards-carrusel p {
-  color: #aaa;
-  line-height: 1.5;
-}
-
 .carrusel::-webkit-scrollbar {
   display: none;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
 .card {
-  flex: 0 0 calc(50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 15px;
+
   background: #111;
   border: 1px solid #222;
   border-radius: 20px;
+
   padding: 30px;
   text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
 }
 
 .card h2 {
@@ -204,7 +228,7 @@ header > a:hover {
   line-height: 1.5;
 }
 
-.contact {
+#contact {
   margin: 20px;
 }
 
@@ -229,9 +253,15 @@ footer {
   h1 {
     font-size: 42px;
   }
-
-  .description {
-    font-size: 18px;
+  header {
+    width: 100%;
+  }
+  header > a {
+    margin: 0;
+    padding: 5px;
+  }
+  .container {
+    width: 100%;
   }
   .card {
     flex: 0 0 80%; /* Ocupa casi toda la pantalla en móviles */
