@@ -58,13 +58,12 @@ header > a:hover {
 }
 
 .presentation {
-  border: 1px solid #333;
-  border-radius: 35px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
   margin: 30px 0px;
   padding: 0px 15px 10px 0px;
 
-  display: flex;
-  flex-direction: row;
   text-align: center;
   justify-content: center;
 
@@ -81,32 +80,30 @@ header > a:hover {
   min-width: 250px;
   max-width: 250px;
 
-  border-radius: 50%;
+  border-radius: 30px;
+
+  float: left;
 
   margin: 20px;
   overflow: hidden;
 
-  border: 1px solid white;
+  border: 1px solid #333;
 }
 
 .image-container > img {
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-.desc {
-  display: flex;
-  flex-direction: column;
-}
-
-.desc > h1 {
+.presentation > h1 {
   flex-wrap: wrap;
   font-size: 30px;
   text-align: center;
 }
 
-.desc > p {
-  text-align: justify;
+.presentation > p {
+  text-align: center;
   font-size: 18px;
 }
 
@@ -125,14 +122,6 @@ header > a:hover {
   font-weight: bold;
 }
 
-.description {
-  color: #b3b3b3;
-  font-size: 20px;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
 .primary {
   border: 1px solid #333;
   color: white;
@@ -147,6 +136,50 @@ header > a:hover {
   transform: translateY(-3px);
 }
 
+#about {
+  scroll-margin-top: 80px;
+}
+
+.contenedor-carrusel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carrusel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 15px;
+}
+
+.cards-carrusel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+  border: 1px solid #222;
+  background: #111;
+  text-align: left;
+
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
+}
+
+.cards-carrusel p {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -154,6 +187,7 @@ header > a:hover {
 }
 
 .card {
+  flex: 0 0 calc(50%);
   background: #111;
   border: 1px solid #222;
   border-radius: 20px;
@@ -180,6 +214,17 @@ footer {
   font-size: 14px;
 }
 
+.cont-footer {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.cont-footer:hover {
+  color: lightblue;
+  font-size: 20px;
+  transition: 400ms;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
@@ -187,5 +232,8 @@ footer {
 
   .description {
     font-size: 18px;
+  }
+  .card {
+    flex: 0 0 80%; /* Ocupa casi toda la pantalla en móviles */
   }
 }
