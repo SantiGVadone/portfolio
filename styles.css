@@ -24,31 +24,53 @@ body {
   align-items: center;
 }
 
-/*ACA EMPIEZA LA SECTION HEADER*/
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 0;
   z-index: 1000;
+  padding: 10px 20px; /* Un padding un poco más limpio */
+  height: 70px; /* Le fijamos un alto estándar */
 
   background-color: rgba(11, 14, 20, 0.05);
   backdrop-filter: blur(10px);
-
   -webkit-backdrop-filter: blur(10px);
 
-  padding: 5px;
-
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-
-  display: inline block;
-
-  height: min-content;
 }
 
-header > a {
+.nav-links {
+  display: flex;
+  justify-content: space-evenly; /* Hereda el comportamiento que antes tenía el header */
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Opcional: para que no se estiren infinitamente en monitores enormes */
+}
+
+.header-button {
   text-decoration: none;
   text-align: center;
   font-size: 22px;
@@ -56,19 +78,22 @@ header > a {
   padding: 7px 14px;
   border-radius: 14px;
   font-weight: bold;
-  color: lightgray;
+  color: white;
+  transition: 200ms;
 }
 
-header > a:hover {
-  transform: translateY(-3px);
-  transition: 200ms;
-  background: #ffffff;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 6%,
-    rgba(54, 54, 54, 1) 100%
-  );
-  color: black;
+.header-button:hover {
+  transform: translateY(-5px);
+  scale: 1.1;
+}
+.download {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.download:hover {
+  text-shadow: 5px 5px 10px white;
 }
 
 .container {
@@ -103,7 +128,7 @@ header > a:hover {
   color: transparent;
   display: inline-block;
   cursor: pointer;
-  }
+}
 
 .tag {
   margin-top: 0px;
@@ -169,8 +194,8 @@ header > a:hover {
   width: fit-content;
 }
 
-.skills-group{
-  display: grid ;
+.skills-group {
+  display: grid;
   grid-template-columns: auto 2fr;
   align-items: center;
   flex-wrap: wrap;
@@ -185,7 +210,7 @@ header > a:hover {
   display: none;
 }
 
-.skills-group > h3{
+.skills-group > h3 {
   justify-self: left;
 }
 
@@ -205,10 +230,10 @@ header > a:hover {
   cursor: pointer;
   font-weight: bold;
   height: fit-content;
-  }
-  .skills-badge > h3 {
-    float: left;
-  }
+}
+.skills-badge > h3 {
+  float: left;
+}
 
 .skills-badge:hover {
   background: white;
@@ -220,8 +245,8 @@ header > a:hover {
 /*ACA TERMINA LA PARTE DEL ABOUT ME*/
 /*ACA EMPIEZA LA PARTE DEL PROJECTS*/
 #projects {
-   scroll-margin-top: 80px;
-   margin-top: 250px;
+  scroll-margin-top: 80px;
+  margin-top: 250px;
 }
 
 .contenedor-carrusel {
@@ -231,7 +256,13 @@ header > a:hover {
 }
 
 .carrusel {
-  display: flex;
+  display: grid;
+
+  grid-auto-flow: column;
+  grid-auto-columns: 350px;
+
+  align-items: stretch;
+
   gap: 25px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -239,7 +270,11 @@ header > a:hover {
   -webkit-overflow-scrolling: touch;
   padding-bottom: 15px;
   border-radius: 35px;
-  
+
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .carrusel::-webkit-scrollbar {
@@ -249,23 +284,20 @@ header > a:hover {
 .card {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
-  min-width: 1fr;
-  max-width: 350px;
+
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+
   background: #111;
   border: 1px solid #222;
   border-radius: 20px;
 
   padding: 0px 30px 20px 30px;
   text-align: left;
-  box-shadow: 10px 10px 6px rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.1);
   scroll-snap-align: center;
-}
 
-.card:nth-child(even) {
-  align-self: flex-end;
+  box-sizing: border-box;
 }
 
 .card h2 {
@@ -276,23 +308,23 @@ header > a:hover {
   width: 300px;
   height: 300px;
   border-radius: 35px;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
-.img-container > img{
+.img-container > img {
   width: 100%;
   height: 100%;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 .card p {
   color: #b1b1b1;
   line-height: 1.5;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 0;
 }
-
 
 .footer-project {
   font-size: small;
@@ -310,6 +342,7 @@ header > a:hover {
 
 /*ACA VA LA PARTE DE LA EDUCACION*/
 #education {
+  margin-top: 250px;
   scroll-margin-top: 90px;
 }
 
@@ -330,19 +363,26 @@ header > a:hover {
   align-self: flex-start;
 }
 
+.education-card:hover {
+  scale: 1.05;
+  transition: 300ms;
+  box-shadow: 5px 5px 10px #3e2c5f;
+}
+
 .education-card:nth-child(even) {
   align-self: flex-end;
 }
 
 .title-date {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 3fr auto;
+  gap: 10px;
   align-items: center;
-  justify-content: space-around;
 }
 
 #contact {
   scroll-margin-top: 90px;
+  margin-top: 250px;
 }
 
 footer {
@@ -373,24 +413,21 @@ footer {
 
 .buttons a {
   text-decoration: none;
-  padding: 14px 28px;
+  padding: 14px 28px 14px 20px;
   border-radius: 14px;
   transition: 0.2s;
   font-weight: bold;
 }
 
-.primary {
+.buttons a {
   background-color: #0b0e14;
   color: white;
   background: linear-gradient(180deg, #0b0e14, #181125);
 }
 
-.primary:hover {
-  background: linear-gradient(180deg, #00f2ff, #7e57c2);
-
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
+.buttons a:hover {
+  opacity: 0.9;
+  box-shadow: 5px 5px 10px #3e2c5f;
 }
 
 .buttons a:hover {
@@ -399,21 +436,9 @@ footer {
   transition: 300ms;
 }
 
-
-
-
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
-  }
-
-  header {
-    width: 100%;
-  }
-
-  header > a {
-    margin: 0;
-    padding: 5px;
   }
 
   .container {
@@ -436,11 +461,55 @@ footer {
     width: 90%;
     align-self: center;
   }
-  .skills-group{
+  .skills-group {
     width: 100%;
     margin: 5px;
     grid-template-columns: 1fr 2fr;
     box-shadow: 5px 5px 10px 0px rgba(255, 255, 255, 0.08);
     border-radius: 25px;
+  }
+
+  header {
+    background-color: transparent;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 15px 25px;
+    height: 60px;
+    backdrop-filter: none;
+    margin-right: 50px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(11, 14, 20, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    transition: right 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .header-button {
+    font-size: 24px;
+    width: 100%;
+    display: block;
   }
 }

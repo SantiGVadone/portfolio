@@ -5,19 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VadoneDeV | Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=1.3">
+    <link rel="stylesheet" href="./styles.css?v=2.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
     <header>
-        <div></div>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <button class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <div>
-        </div>
+        <nav class="nav-links" id="nav-links">
+            <a href="#about" class="header-button">About Me</a>
+            <a href="#projects" class="header-button">Projects</a>
+            <a href="#education" class="header-button">Education</a>
+            <a href="#contact" class="header-button">Contact</a>
+
+            <a href="./assets/CV-Vadone-Santiago-2026-ING.pdf" download="CV-Vadone-Santiago-2026-ING.pdf"
+                class="download">
+                <i class="ph-bold ph-download-simple"></i>
+            </a>
+        </nav>
     </header>
     <div class="container">
         <section id="about">
@@ -52,22 +62,22 @@
                     <h3 class="nombre" style="font-size:22px;">BackEnd: </h3>
                     <div class="sk">
                         <p class="skills-badge">JavaScript</p>
-                <p class="skills-badge">TypeScript</p>
-                <p class="skills-badge">NodeJs</p>
-                <p class="skills-badge">Oracle PL / SQL</p>
-                <p class="skills-badge">PostgreSQL</p>
+                        <p class="skills-badge">TypeScript</p>
+                        <p class="skills-badge">NodeJs</p>
+                        <p class="skills-badge">Oracle PL / SQL</p>
+                        <p class="skills-badge">PostgreSQL</p>
                     </div>
                 </div>
                 <div id="tools" class="skills-group">
                     <h3 class="nombre" style="font-size:22px;">Tools: </h3>
-                <div class="sk">
-                    <p class="skills-badge">Linux</p>
-                    <p class="skills-badge">Docker</p>
-                    <p class="skills-badge">GitHub</p>
-                    <p class="skills-badge">Git</p>
-                    <p class="skills-badge">SSH</p>
+                    <div class="sk">
+                        <p class="skills-badge">Linux</p>
+                        <p class="skills-badge">Docker</p>
+                        <p class="skills-badge">GitHub</p>
+                        <p class="skills-badge">Git</p>
+                        <p class="skills-badge">SSH</p>
 
-                </div>
+                    </div>
                 </div>
 
             </div>
@@ -77,14 +87,20 @@
             <div class="contenedor-carrusel">
                 <div class="carrusel">
                     <div class="card">
-                        <h2>Lorem ipsum dolor</h2>
-                        <a href="https://github.com/SantiGVadone" class="img-container">
-                                <div class="img-container">
-                                <img src="assets/constr.jpg" alt="Foto de portada del proyecto">
+                        <h2>Inventory Hub: Self-Hosted Full-Stack Stock System</h2>
+                        <a href="https://github.com/SantiGVadone/stock-frontend" class="img-container">
+                            <div class="img-container">
+                                <img src="assets/app-stock.png" alt="Foto de portada del proyecto">
                             </div>
                         </a>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magnam ut blanditiis non rerum explicabo. Iure ut quidem recusandae unde, quae explicabo dolor magnam illum perspiciatis reiciendis ducimus, voluptatem provident.
+                            A mobile-first inventory management application built with React Native and TypeScript,
+                            powered by a Node.js REST API and a PostgreSQL database.
+
+                            The entire ecosystem is fully containerized using Docker Compose and self-hosted on a
+                            dedicated Linux home server, utilizing Cloudflare Tunnels to expose endpoints securely to
+                            the web without open ports. Features real-time stock updates, modern full-stack
+                            architecture, and full infrastructure control.
                         </p>
 
                         <div class="footer-project">
@@ -92,14 +108,20 @@
                         </div>
                     </div>
                     <div class="card">
-                        <h2>Lorem ipsum dolor</h2>
-                        <a href="https://github.com/SantiGVadone" class="img-container">
-                                <div class="img-container">
-                                <img src="assets/constr.jpg" alt="Foto de portada del proyecto">
+                        <h2>GlowManager API: Hair Salon & Appointment Management Engine</h2>
+                        <a href="https://github.com/SantiGVadone/Proyecto-Peluqueria" class="img-container">
+                            <div class="img-container">
+                                <img src="assets/api-appointments.jpg" alt="Foto de portada del proyecto">
                             </div>
                         </a>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magnam ut blanditiis non rerum explicabo. Iure ut quidem recusandae unde, quae explicabo dolor magnam illum perspiciatis reiciendis ducimus, voluptatem provident.
+                            A production-ready REST API built with Node.js and TypeScript to digitize salon operations.
+                            It features a layered architecture (Controller-Service-Repository) and a PostgreSQL
+                            database. The system implements Role-Based Access Control (RBAC) via JWT for Admins, Bosses,
+                            and
+                            Employees, handling appointments, client histories, service catalogs, and automated staff
+                            bonus calculations. Robust security includes password hashing and runtime schema validation
+                            using Zod.
                         </p>
 
                         <div class="footer-project">
@@ -107,36 +129,27 @@
                         </div>
                     </div>
                     <div class="card">
-                        <h2>Lorem ipsum dolor</h2>
-                        <a href="https://github.com/SantiGVadone" class="img-container">
-                                <div class="img-container">
-                                <img src="assets/constr.jpg" alt="Foto de portada del proyecto">
+                        <h2>HomeServer Setup: Self-Hosted Infrastructure & DevOps Environment</h2>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7460084449108455424/"
+                            class="img-container">
+                            <div class="img-container">
+                                <img src="assets/tree-linux.jpg" alt="Foto de portada del proyecto">
                             </div>
                         </a>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magnam ut blanditiis non rerum explicabo. Iure ut quidem recusandae unde, quae explicabo dolor magnam illum perspiciatis reiciendis ducimus, voluptatem provident.
+                            A personal homelab infrastructure built by transforming an old laptop into a dedicated Linux
+                            server. The project covers the configuration of a secure deployment pipeline utilizing SSH
+                            remote access, version control with GitHub, and service isolation through Docker and Docker
+                            Compose. It manages the life cycle of containerized full-stack applications, handling
+                            container networking and volumes while implementing Cloudflare Tunnels to orchestrate secure
+                            external access. This project bridges the gap between software development and system
+                            administration.
                         </p>
 
                         <div class="footer-project">
                             <a href="https://github.com/SantiGVadone">© 2026 VadoneDeV</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h2>Lorem ipsum dolor</h2>
-                        <a href="https://github.com/SantiGVadone" class="img-container">
-                                <div class="img-container">
-                                <img src="assets/constr.jpg" alt="Foto de portada del proyecto">
-                            </div>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magnam ut blanditiis non rerum explicabo. Iure ut quidem recusandae unde, quae explicabo dolor magnam illum perspiciatis reiciendis ducimus, voluptatem provident.
-                        </p>
-
-                        <div class="footer-project">
-                            <a href="https://github.com/SantiGVadone">© 2026 VadoneDeV</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -145,35 +158,77 @@
             <div class="contenedor-education">
                 <div class="education-card">
                     <div class="title-date">
-                        <h1 class="nombre" style="font-size: large;">Tecnico Universitario en
-                            Programacion</h1>
-                        <span class="date">2025 <span class="nombre" style="font-size: large;"> to </span> 2026</span>
+                        <h1 class="nombre" style="font-size: large;">University Technical Degree in Programming</h1>
+                        <span class="date">2025 <span class="nombre" style="font-size: large;"> to </span>
+                            Present</span>
                     </div>
-                    <h3 class="insitucion">Universidad Tecnologica Nacional</h3>
+                    <h3 class="insitucion">National Technological University</h3>
                 </div>
                 <div class="education-card">
                     <div class="title-date">
-                        <h1 class="nombre" style="font-size: large;">Tecnico Electronico</h1>
-                        <span class="date">2012 <span class="nombre" style="font-size: large;"> to </span> 2018</span>
+                        <h1 class="nombre" style="font-size: large;">Getting Started with Git and GitHub</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
                     </div>
-                    <h3 class="insitucion">Escuela de Educacion Tecnica N 1 Merlo</h3>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to HTML, CSS, & JavaScript</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to Cloud Computing</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to Software Engineering</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+
+
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">University Python Course</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2021</span>
+                    </div>
+                    <h3 class="insitucion">National Technological University</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Technician in Electronics</h1>
+                        <span class="date">2015 <span class="nombre" style="font-size: large;"> to </span> 2021</span>
+                    </div>
+                    <h3 class="insitucion">Technical HighSchool Nº1 Merlo</h3>
                 </div>
             </div>
         </section>
         <section id="contact" class="contact">
             <h1 class="nombre" style="font-size: xxx-large;">Contact</h1>
             <div class="buttons">
-                <a href="mailto:santiagogabrielvadone@outlook.com" class="primary">Email</a>
-                <a href="#wsp" class="primary">WhatsApp</a>
-                <a href="https://github.com/SantiGVadone" class="primary">GitHub</a>
-                <a href="https://www.linkedin.com/in/santiago-gabriel-vadone" class="primary">LinkedIn</a>
-           
+                <a href="mailto:santiagogabrielvadone@outlook.com" class="primary"><i
+                        class="ph-bold ph-envelope-simple"></i> Email</a>
+                <a href="https://github.com/SantiGVadone" class="primary"><i class="ph-bold ph-github-logo"></i>
+                    GitHub</a>
+                <a href="https://www.linkedin.com/in/santiago-gabriel-vadone" class="primary"><i
+                        class="ph-bold ph-linkedin-logo"></i> LinkedIn</a>
+
             </div>
         </section>
         <footer>
             <a href="mailto:santiagogabrielvadone@outlook.com" class="cont-footer">Email</a>
-            <a> | </a>
-            <a href="#wsp" class="cont-footer">WhatsApp</a>
             <a> | </a>
             <a href="https://github.com/SantiGVadone" class="cont-footer">GitHub</a>
             <a> | </a>
