@@ -24,6 +24,7 @@ body {
   align-items: center;
 }
 
+/*ACA EMPIEZA LA SECTION HEADER*/
 header {
   position: fixed;
   top: 0;
@@ -78,11 +79,13 @@ header > a:hover {
   padding-top: 50px;
 }
 
+/*ACA EMPIEZA LA SECTION ABOUT*/
 #about {
   scroll-margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 100px 0px;
 }
 
 .intro {
@@ -160,69 +163,63 @@ header > a:hover {
 
 .skills {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  gap: 20px;
+  width: fit-content;
+}
+
+.skills-group{
+  display: grid ;
+  grid-template-columns: auto 2fr;
   flex-wrap: wrap;
   margin: 10px;
+  width: fit-content;
+  gap: 0px;
 }
 
 .skills::-webkit-scrollbar {
   display: none;
 }
 
+.skills-group > h3{
+  justify-self: left;
+  
+}
+
+.sk {
+  display: flex;
+  justify-self: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .skills-badge {
-  margin: 0;
+  margin: 8px 8px;
   padding: 8px;
   border-radius: 35px;
   color: lightgray;
   background: linear-gradient(180deg, #0b0e14, #181125);
   cursor: pointer;
   font-weight: bold;
-}
+  height: fit-content;
+  }
+  .skills-badge > h3 {
+    float: left;
+  }
 
 .skills-badge:hover {
   background: white;
   color: rgb(37, 37, 37);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   transition: 300ms;
+  scale: 1.1;
 }
-
 /*ACA TERMINA LA PARTE DEL ABOUT ME*/
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.buttons a {
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 14px;
-  transition: 0.2s;
-  font-weight: bold;
-}
-
-.primary {
-  background-color: #0b0e14;
-  color: white;
-  background: linear-gradient(180deg, #0b0e14, #181125);
-}
-
-.primary:hover {
-  background: #ffffff;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 6%,
-    rgba(54, 54, 54, 1) 100%
-  );
-  color: black;
-}
-
-.buttons a:hover {
-  transform: translateY(-3px);
+/*ACA EMPIEZA LA PARTE DEL PROJECTS*/
+#projects {
+   scroll-margin-top: 80px;
+   margin-top: 250px;
 }
 
 .contenedor-carrusel {
@@ -270,6 +267,7 @@ header > a:hover {
   line-height: 1.5;
 }
 
+
 /*ACA VA LA PARTE DE LA EDUCACION*/
 #education {
   scroll-margin-top: 90px;
@@ -283,7 +281,7 @@ header > a:hover {
 }
 
 .education-card {
-  width: 60%;
+  width: 50%;
   padding: 15px;
   background: linear-gradient(180deg, #0b0e14, #181125);
   border: 1px solid white;
@@ -324,6 +322,46 @@ footer {
   transition: 400ms;
 }
 
+/*AUXILIARES*/
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 14px;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.primary {
+  background-color: #0b0e14;
+  color: white;
+  background: linear-gradient(180deg, #0b0e14, #181125);
+}
+
+.primary:hover {
+  background: linear-gradient(180deg, #00f2ff, #7e57c2);
+
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.buttons a:hover {
+  transform: translateY(-5px);
+  scale: 1.1;
+  transition: 300ms;
+}
+
+
+
+
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
@@ -357,5 +395,9 @@ footer {
   .education-card:nth-child(even) {
     width: 90%;
     align-self: center;
+  }
+  .skills-group{
+    width: 100%;
+    margin: 5px;
   }
 }
