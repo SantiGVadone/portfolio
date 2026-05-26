@@ -245,8 +245,6 @@ header {
 }
 
 .skills-badge:hover {
-  background: white;
-  color: rgb(37, 37, 37);
   transform: translateY(-5px);
   transition: 300ms;
   scale: 1.1;
