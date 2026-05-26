@@ -5,8 +5,13 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active')
 })
 
-// Opcional: Cierra el menú cuando hacés clic en cualquier link
 document.querySelectorAll('.header-button').forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active')
+  })
+})
+
+document.querySelectorAll('.container').forEach((link) => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active')
   })
