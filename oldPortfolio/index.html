@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VadoneDeV | Portfolio</title>
+    <link rel="stylesheet" href="./styles.css?v=2.2.1">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header>
+        <button class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="#about" class="header-button">About Me</a>
+            <a href="#projects" class="header-button">Projects</a>
+            <a href="#education" class="header-button">Education</a>
+            <a href="#contact" class="header-button">Contact</a>
+
+            <a href="./assets/CV-Vadone-Santiago-2026-ING.pdf" download="CV-Vadone-Santiago-2026-ING.pdf"
+                class="download">
+                <i class="ph-bold ph-download-simple"></i>
+            </a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about">
+            <h1 class="intro">I'm <span class="nombre">Vadone Santiago</span></h1>
+            <h2 class="tag"><span class="nombre" style="font-size: 40px;">[</span>FULLSTACK DEVELOPER TRAINEE<span
+                    class="nombre" style="font-size: 40px;">]</span></h2>
+            <div class="status-badge">
+                <span class="dot"></span>
+                STATUS: AVAILABLE FOR HIRE
+            </div>
+            <p class="desc">
+                Final-year Programming student at UTN, currently working as a Freelance FullStack Developer.
+                While I
+                started my journey with low-level languages like C, C++, and Arduino, I’ve shifted my focus
+                toward
+                building modern web and mobile applications using React, React Native, and Node.js. I’m a
+                Backend-leaning developer with a passion for systems architecture, currently managing my own
+                self-hosted Linux server with Docker to deeply understand how applications run under the hood.
+            </p>
+            <div class="skills">
+                <div id="front" class="skills-group">
+                    <h3 class="nombre" style="font-size:22px;">FrontEnd: </h3>
+                    <div class="sk">
+                        <p class="skills-badge">React Native</p>
+                        <p class="skills-badge">React</p>
+                        <p class="skills-badge">HTML</p>
+                        <p class="skills-badge">CSS</p>
+                        <p class="skills-badge">Expo</p>
+                    </div>
+                </div>
+                <div id="back" class="skills-group">
+                    <h3 class="nombre" style="font-size:22px;">BackEnd: </h3>
+                    <div class="sk">
+                        <p class="skills-badge">JavaScript</p>
+                        <p class="skills-badge">TypeScript</p>
+                        <p class="skills-badge">NodeJs</p>
+                        <p class="skills-badge">Oracle PL / SQL</p>
+                        <p class="skills-badge">PostgreSQL</p>
+                    </div>
+                </div>
+                <div id="tools" class="skills-group">
+                    <h3 class="nombre" style="font-size:22px;">Tools: </h3>
+                    <div class="sk">
+                        <p class="skills-badge">Linux</p>
+                        <p class="skills-badge">Docker</p>
+                        <p class="skills-badge">GitHub</p>
+                        <p class="skills-badge">Git</p>
+                        <p class="skills-badge">SSH</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="projects">
+            <h1 class="nombre" style="font-size: xxx-large;">Projects</h1>
+            <div class="contenedor-carrusel">
+                <div class="carrusel">
+                    <div class="card">
+                        <h2>Inventory Hub: Self-Hosted Full-Stack Stock System</h2>
+                        <a href="https://github.com/SantiGVadone/stock-frontend" class="img-container">
+                            <div class="img-container">
+                                <img src="./assets/app-stock.png" alt="Foto de portada del proyecto">
+                            </div>
+                        </a>
+                        <p>
+                            A mobile-first inventory management application built with React Native and TypeScript,
+                            powered by a Node.js REST API and a PostgreSQL database.
+
+                            The entire ecosystem is fully containerized using Docker Compose and self-hosted on a
+                            dedicated Linux home server, utilizing Cloudflare Tunnels to expose endpoints securely to
+                            the web without open ports. Features real-time stock updates, modern full-stack
+                            architecture, and full infrastructure control.
+                        </p>
+
+                        <div class="footer-project">
+                            <a href="https://github.com/SantiGVadone">© 2026 VadoneDeV</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2>GlowManager API: Hair Salon & Appointment Management Engine</h2>
+                        <a href="https://github.com/SantiGVadone/Proyecto-Peluqueria" class="img-container">
+                            <div class="img-container">
+                                <img src="./assets/api-appointments.jpg" alt="Foto de portada del proyecto">
+                            </div>
+                        </a>
+                        <p>
+                            A production-ready REST API built with Node.js and TypeScript to digitize salon operations.
+                            It features a layered architecture (Controller-Service-Repository) and a PostgreSQL
+                            database. The system implements Role-Based Access Control (RBAC) via JWT for Admins, Bosses,
+                            and
+                            Employees, handling appointments, client histories, service catalogs, and automated staff
+                            bonus calculations. Robust security includes password hashing and runtime schema validation
+                            using Zod.
+                        </p>
+
+                        <div class="footer-project">
+                            <a href="https://github.com/SantiGVadone">© 2026 VadoneDeV</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2>HomeServer Setup: Self-Hosted Infrastructure & DevOps Environment</h2>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7460084449108455424/"
+                            class="img-container">
+                            <div class="img-container">
+                                <img src="./assets/tree-linux.jpg" alt="Foto de portada del proyecto">
+                            </div>
+                        </a>
+                        <p>
+                            A personal homelab infrastructure built by transforming an old laptop into a dedicated Linux
+                            server. The project covers the configuration of a secure deployment pipeline utilizing SSH
+                            remote access, version control with GitHub, and service isolation through Docker and Docker
+                            Compose. It manages the life cycle of containerized full-stack applications, handling
+                            container networking and volumes while implementing Cloudflare Tunnels to orchestrate secure
+                            external access. This project bridges the gap between software development and system
+                            administration.
+                        </p>
+
+                        <div class="footer-project">
+                            <a href="https://github.com/SantiGVadone">© 2026 VadoneDeV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <h1 class="nombre" style="font-size: xxx-large;">Education</h1>
+            <div class="contenedor-education">
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">University Technical Degree in Programming</h1>
+                        <span class="date">2025 <span class="nombre" style="font-size: large;"> to </span>
+                            Present</span>
+                    </div>
+                    <h3 class="insitucion">National Technological University</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Getting Started with Git and GitHub</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to HTML, CSS, & JavaScript</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to Cloud Computing</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Introduction to Software Engineering</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2025</span>
+                    </div>
+                    <h3 class="insitucion">Coursera</h3>
+                </div>
+
+
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">University Python Course</h1>
+                        <span class="date"><span class="nombre" style="font-size: large; margin-right: 2px;"> in </span>
+                            2021</span>
+                    </div>
+                    <h3 class="insitucion">National Technological University</h3>
+                </div>
+                <div class="education-card">
+                    <div class="title-date">
+                        <h1 class="nombre" style="font-size: large;">Technician in Electronics</h1>
+                        <span class="date">2015 <span class="nombre" style="font-size: large;"> to </span> 2021</span>
+                    </div>
+                    <h3 class="insitucion">Technical HighSchool Nº1 Merlo</h3>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h1 class="nombre" style="font-size: xxx-large;">Contact</h1>
+            <div class="buttons">
+                <a href="mailto:santiagogabrielvadone@outlook.com" class="primary"><i
+                        class="ph-bold ph-envelope-simple"></i> Email</a>
+                <a href="https://github.com/SantiGVadone" class="primary"><i class="ph-bold ph-github-logo"></i>
+                    GitHub</a>
+                <a href="https://www.linkedin.com/in/santiago-gabriel-vadone" class="primary"><i
+                        class="ph-bold ph-linkedin-logo"></i> LinkedIn</a>
+
+            </div>
+        </section>
+        <footer>
+            <a href="mailto:santiagogabrielvadone@outlook.com" class="cont-footer">Email</a>
+            <a> | </a>
+            <a href="https://github.com/SantiGVadone" class="cont-footer">GitHub</a>
+            <a> | </a>
+            <a href="https://www.linkedin.com/in/santiago-gabriel-vadone" class="cont-footer">LinkedIn</a>
+            <a> | </a>
+            © 2026 VadoneDeV
+        </footer>
+    </div>
+    <script src="./scripts.js?v=1.2"></script>
+
+</body>
+
+</html>
