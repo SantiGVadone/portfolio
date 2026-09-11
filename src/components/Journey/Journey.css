@@ -1,13 +1,15 @@
 .journey {
-  padding: 2em 1.5em;
-  gap: 5em;
-  max-width: 50%;
-  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+
+  max-width: 60%;
+
   margin-bottom: 2em;
+  padding: 2em 1.5em;
+
+  gap: 5em;
 }
 
 .journey-list {
@@ -16,16 +18,128 @@
   gap: 2em;
   align-items: center;
 }
+/* Card contenedora: Borde gris sutil por defecto */
+.border-card {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 1px; /* Grosor exacto del borde */
+  background: rgba(255, 255, 255, 0.12); /* El borde gris original sin hover */
+  transition: background 0.3s ease;
+}
+
+/* El haz de luz naranja que gira */
+.border-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  /* Estela suave y degradada tipo cometa */
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(249, 115, 22, 0.4) 320deg,
+    #ff8a3d 350deg,
+    #ffffff 360deg
+  );
+  opacity: 0; /* Oculto sin hover */
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* En hover: se hace visible y empieza a girar */
+.border-card:hover::before {
+  opacity: 1;
+  animation: beam-spin 4s linear infinite;
+}
+
+/* El interior que tapa todo excepto el borde de 1px */
+.border-card-content {
+  position: relative;
+  /* COLOR SÓLIDO (sin transparencia) idéntico a tu tema oscuro */
+  background-color: hsl(223, 21%, 13.5%);
+  background-image: url('/noisy.webp');
+  border-radius: 15px; /* Un píxel menos que los 16px del padre */
+  border: 1px solid var(--card-border);
+  padding: 1rem 1rem;
+  z-index: 1;
+}
+
+/* Animación de rotación */
+@keyframes beam-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustes de tipografía y espaciados iguales al diseño */
+.journey-header-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.journey-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.journey-separator {
+  color: #64748b;
+}
+
+.journey-institution {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.journey-period {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+  margin-bottom: 1.2rem;
+}
+
+.journey-highlights {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.journey-highlights li {
+  color: #bebec9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.journey-highlights .highlight {
+  color: #f59e0b;
+  font-weight: 600;
+}
 
 .journey-item {
   position: relative;
+  text-align: justify;
+  width: 100%;
   padding: 2em;
-  border-radius: var(--radius);
   background: var(--card-bg);
-  text-align: start;
+  border-radius: var(--radius);
   border: 1px solid var(--card-border);
   transition: border-color var(--transition);
-  max-width: 90%;
 }
 
 .journey-item:hover {
@@ -34,10 +148,10 @@
 
 .journey-header {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.3em;
+  justify-content: space-between;
+  margin-bottom: 0.4em;
 }
 
 .journey-title {
@@ -51,12 +165,8 @@
   color: var(--accent);
 }
 
-.journey-separator {
-  color: var(--text-muted);
-}
-
 .journey-institution {
-  font-weight: 500;
+  font-weight: 300;
   color: var(--text);
 }
 
@@ -65,15 +175,37 @@
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: 0.8em;
+  text-align: justify;
 }
 
-.journey-description {
-  font-size: 1rem;
-  color: var(--text);
-  line-height: 1.7;
+.journey-highlights {
+  list-style: disc;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* separación entre bullets */
 }
 
-@media (max-width: 574px) {
+.journey-highlights li {
+  color: #a1a1aa; /* gris claro similar al texto secundario */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Color naranja para las palabras clave */
+.journey-highlights .highlight {
+  color: #f59e0b; /* o #fbbf24 para un tono más dorado */
+  font-weight: 600;
+}
+
+@media (max-width: 1650px) and (min-width: 574px) {
+  .journey {
+    max-width: 90%;
+    padding: 1.5em 1em;
+    gap: 2em;
+  }
+
   .journey-item {
     padding: 1.2em;
   }
@@ -89,5 +221,32 @@
 
   .journey-title {
     font-size: 1.05rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 574px) {
+  .journey {
+    max-width: 100%;
+    padding: 1.5em 1em;
+    gap: 2em;
+  }
+
+  .journey-item {
+    padding: 1.2em;
+  }
+
+  .journey-header {
+    flex-direction: column;
+    gap: 0.2em;
+  }
+
+  .journey-separator {
+    display: none;
+  }
+
+  .journey-title {
+    font-size: 1.05rem;
+    text-align: center;
   }
 }
