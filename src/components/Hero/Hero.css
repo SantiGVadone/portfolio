@@ -1,0 +1,131 @@
+.hero {
+  position: relative;
+  min-height: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 24px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-content {
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.hero-name {
+  font-size: 3.5rem;
+  color: var(--text-bright);
+  margin-bottom: 0.2em;
+}
+
+.hero-role {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(270deg, #f76927 0%, #fdfa29 100%);
+  background-size: 150%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: gradient-shift 4s linear infinite;
+  margin-bottom: 0.5em;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-description {
+  padding-inline: 2.5em;
+  margin-top: 1em;
+  font-size: 1.2em;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2em;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6em 1.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e05a1a;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-bright);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 574px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 56px 40px;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-role {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    padding-inline: 0;
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+}
