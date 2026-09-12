@@ -63,7 +63,7 @@
   position: relative;
   /* COLOR SÓLIDO (sin transparencia) idéntico a tu tema oscuro */
   background-color: hsl(223, 21%, 13.5%);
-  background-image: url('/noisy.webp');
+  background-image: url(../../../public/img/background.svg);
   border-radius: 15px; /* Un píxel menos que los 16px del padre */
   border: 1px solid var(--card-border);
   padding: 1rem 1rem;

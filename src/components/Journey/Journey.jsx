@@ -4,7 +4,9 @@ import './Journey.css'
 export const Journey = () => {
   return (
     <section className='journey section' id='studies'>
-      <h2 className='section-title'>Studies</h2>
+      <h2 className='section-title' style={{ marginBottom: '1em' }}>
+        Estudios
+      </h2>
 
       <div className='journey-list'>
         {experience.map((item) => (
