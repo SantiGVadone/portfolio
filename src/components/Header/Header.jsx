@@ -1,12 +1,13 @@
 import { useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { MenuIcon, CloseIcon } from '../icons/Icons'
 import './Header.css'
 
 const navItems = [
-  { label: 'Sobre Mi', href: '#about' },
-  { label: 'Estudios', href: '#studies' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Stack', href: '#stack' },
+  { label: 'Sobre Mi', href: '/#about' },
+  { label: 'Estudios', href: '/#studies' },
+  { label: 'Proyectos', href: '/#projects' },
+  { label: 'Stack', href: '/#stack' },
 ]
 
 export const Header = () => {
@@ -17,10 +18,10 @@ export const Header = () => {
   return (
     <header className='header'>
       <nav className='header-nav'>
-        <a href='#' className='header-logo'>
+        <Link to='/' className='header-logo'>
           <span className='header-logo-icon' />
           VadoneDev<strong>.</strong>
-        </a>
+        </Link>
 
         <ul className='header-links'>
           {navItems.map((item) => (
@@ -34,9 +35,9 @@ export const Header = () => {
 
         <div className='header-right-container'>
           <div>
-            <a href={'#blog'} className='header-link'>
+            <Link to='/blog' className='header-link'>
               Blog
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -65,9 +66,9 @@ export const Header = () => {
           </a>
         ))}
         <div className='mobile-menu-social'>
-          <a href='#blog' onClick={closeMenu}>
+          <Link to='/blog' onClick={closeMenu}>
             Blog
-          </a>
+          </Link>
         </div>
       </nav>
     </header>
