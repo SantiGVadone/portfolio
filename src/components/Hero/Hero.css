@@ -8,6 +8,12 @@
   padding: 150px 24px 40px;
   max-width: var(--max-width);
   margin: 0 auto;
+  background: radial-gradient(
+    circle at center,
+    rgba(128, 0, 128, 0.2) 0%,
+    rgba(20, 0, 30, 0.15) 40%,
+    transparent 40%
+  );
 }
 
 .hero-content {
