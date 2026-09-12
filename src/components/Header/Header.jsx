@@ -1,14 +1,12 @@
 import { useState, useCallback } from 'react'
-import { GithubIcon, LinkedinIcon, MenuIcon, CloseIcon } from '../icons/Icons'
-import { socialLinks } from '../../data/links'
+import { MenuIcon, CloseIcon } from '../icons/Icons'
 import './Header.css'
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Studies', href: '#studies' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Sobre Mi', href: '#about' },
+  { label: 'Estudios', href: '#studies' },
+  { label: 'Proyectos', href: '#projects' },
   { label: 'Stack', href: '#stack' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 export const Header = () => {
@@ -20,8 +18,14 @@ export const Header = () => {
     <header className='header'>
       <nav className='header-nav'>
         <a href='#' className='header-logo'>
+          <img
+            src='../../../public/favicon.webp'
+            alt=''
+            width={35}
+            style={{ margin: 0, padding: 0 }}
+          />
           <span className='header-logo-icon' />
-          VadoneDev<span>.</span>
+          VadoneDev<strong>.</strong>
         </a>
 
         <ul className='header-links'>
@@ -38,26 +42,6 @@ export const Header = () => {
           <div>
             <a href={'#blog'} className='header-link'>
               Blog
-            </a>
-          </div>
-          <div className='header-right-container'>
-            <a
-              href={socialLinks.github}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='header-social-link'
-              aria-label='GitHub'
-            >
-              <GithubIcon size={20} />
-            </a>
-            <a
-              href={socialLinks.linkedin}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='header-social-link'
-              aria-label='LinkedIn'
-            >
-              <LinkedinIcon size={20} />
             </a>
           </div>
         </div>
@@ -87,23 +71,8 @@ export const Header = () => {
           </a>
         ))}
         <div className='mobile-menu-social'>
-          <a
-            href={socialLinks.github}
-            target='_blank'
-            rel='noopener noreferrer'
-            onClick={closeMenu}
-          >
-            <GithubIcon size={18} />
-            GitHub
-          </a>
-          <a
-            href={socialLinks.linkedin}
-            target='_blank'
-            rel='noopener noreferrer'
-            onClick={closeMenu}
-          >
-            <LinkedinIcon size={18} />
-            LinkedIn
+          <a href='#blog' onClick={closeMenu}>
+            Blog
           </a>
         </div>
       </nav>
