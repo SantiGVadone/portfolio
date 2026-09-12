@@ -1,0 +1,88 @@
+.footer {
+  display: flex;
+  height: 3.5em;
+  justify-content: space-around;
+
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+  padding-inline: 1em;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: fit-content;
+  font-size: 1.1rem;
+  align-self: center;
+}
+
+.footer-text span {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+/* Redes sociales */
+.stack-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8em;
+}
+
+.stack-socials a {
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.stack-socials a:hover {
+  transition: 1s;
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 25px rgba(255, 255, 255, 0.45));
+}
+
+.social-icon {
+  width: 55px;
+  height: 55px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.header-logo-icon {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url('./../../../public/favicon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.85rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .header-logo-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}

@@ -1,0 +1,147 @@
+.stack {
+  padding: 5em 1.5em;
+  max-width: 60%;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2.5em;
+}
+
+/* Grilla fluida centrada */
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25em;
+  width: 100%;
+}
+
+/* Tarjeta individual */
+.stack-item {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 1.1em;
+  background: color-mix(
+    in srgb,
+    var(--glow-color) 12%,
+    rgba(255, 255, 255, 0.03)
+  );
+  border: none;
+  box-shadow: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.stack-item:hover {
+  transform: translateY(-2px);
+  background: color-mix(
+    in srgb,
+    var(--glow-color) 18%,
+    rgba(255, 255, 255, 0.05)
+  );
+  border-color: var(--glow-color);
+  box-shadow:
+    0 0 0 1px var(--glow-color),
+    0 0 28px 4px color-mix(in srgb, var(--glow-color) 55%, transparent);
+}
+
+.stack-item-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.stack-item-name {
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Tooltip emergente */
+.stack-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: #0d1117;
+  border: 1.5px solid var(--glow-color);
+  color: var(--glow-color);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 30;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.6),
+    0 0 14px -2px color-mix(in srgb, var(--glow-color) 60%, transparent);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.stack-item:hover .stack-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .stack {
+    max-width: 90%;
+    width: 90%;
+  }
+
+  .stack-grid {
+    gap: 0.8em;
+  }
+
+  .stack-item {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 0.9em;
+  }
+
+  .stack-item-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .stack-tooltip {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 8px;
+    bottom: calc(100% + 8px);
+  }
+}
