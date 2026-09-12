@@ -19,8 +19,8 @@ export const About = () => {
                 aria-label='LinkedIn'
               >
                 <svg
-                  width='40'
-                  height='40'
+                  width='45'
+                  height='45'
                   viewBox='0 0 24 24'
                   fill='currentColor'
                   xmlns='http://www.w3.org/2000/svg'
@@ -37,8 +37,8 @@ export const About = () => {
                 aria-label='GitHub'
               >
                 <svg
-                  width='35'
-                  height='35'
+                  width='40'
+                  height='40'
                   viewBox='0 0 50 50'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -93,7 +93,7 @@ export const About = () => {
             <strong>Oracle PL/SQL</strong>, <strong>PostgreSQL</strong>,{' '}
             <strong>JWT</strong>, <strong>React</strong>, <strong>Linux</strong>{' '}
             y <strong>Docker</strong>, aplicando{' '}
-            <strong>metodologias ágiles</strong> priorizando un codigo
+            <strong>metodologias ágiles</strong> priorizando un codigo{' '}
             <strong>mantenible</strong> y <strong>sustentable</strong>.
           </p>
         </div>
