@@ -1,24 +1,19 @@
 .footer {
-  height: 5.5em;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2em;
+  height: 3.5em;
+  justify-content: space-around;
+
   color: var(--text-muted);
   font-size: 1rem;
   text-align: center;
-}
-
-.footer-inner {
-  display: flex;
   align-items: center;
-  gap: 2em;
+  padding-inline: 1em;
 }
 
 .footer-text {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  height: fit-content;
+  font-size: 1.1rem;
+  align-self: center;
 }
 
 .footer-text span {
@@ -26,23 +21,36 @@
   font-weight: 600;
 }
 
-.footer-links {
+/* Redes sociales */
+.stack-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8em;
+}
+
+.stack-socials a {
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 1.5em;
 }
 
-.footer-link {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  transition: color var(--transition);
+.stack-socials a:hover {
+  transition: 1s;
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 25px rgba(255, 255, 255, 0.45));
 }
 
-.footer-link:hover {
-  color: var(--accent-secondary);
+.social-icon {
+  width: 55px;
+  height: 55px;
 }
 
-@media (max-width: 574px) {
+@media (max-width: 600px) {
   .footer {
     font-size: 0.85rem;
   }
@@ -50,5 +58,9 @@
   .footer-inner {
     flex-direction: column;
     gap: 1em;
+  }
+  .social-icon {
+    width: 35px;
+    height: 35px;
   }
 }
