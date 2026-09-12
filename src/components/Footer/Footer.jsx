@@ -6,7 +6,8 @@ export const Footer = () => {
   return (
     <footer className='footer'>
       <p className='footer-text'>
-        <span>
+        <span className='logo-container'>
+          <span className='header-logo-icon' />
           VadoneDev<strong>.</strong>
         </span>{' '}
         &copy; {year}

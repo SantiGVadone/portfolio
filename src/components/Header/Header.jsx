@@ -18,12 +18,6 @@ export const Header = () => {
     <header className='header'>
       <nav className='header-nav'>
         <a href='#' className='header-logo'>
-          <img
-            src='../../../public/favicon.webp'
-            alt=''
-            width={35}
-            style={{ margin: 0, padding: 0 }}
-          />
           <span className='header-logo-icon' />
           VadoneDev<strong>.</strong>
         </a>

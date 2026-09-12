@@ -11,6 +11,10 @@
 }
 
 .footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   height: fit-content;
   font-size: 1.1rem;
   align-self: center;
@@ -49,6 +53,20 @@
   width: 55px;
   height: 55px;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.header-logo-icon {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url('./../../../public/favicon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 @media (max-width: 600px) {
   .footer {
@@ -60,7 +78,11 @@
     gap: 1em;
   }
   .social-icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
+  }
+  .header-logo-icon {
+    width: 1.5em;
+    height: 1.5em;
   }
 }
