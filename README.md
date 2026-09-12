@@ -1,16 +1,58 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌐 Santiago Vadone — Portfolio
 
-Currently, two official plugins are available:
+Portfolio personal y profesional desarrollado con **React** y **Vite**, desplegado y autohospedado en homeserver propio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Explorar sitio en vivo → **vadonedev.com.ar**](https://vadonedev.com.ar)
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React 18+, Vite, CSS3 moderno (Flexbox, Backdrop Filter, variables CSS)
+- **Hosting / Infra:** Self-hosted en Homeserver personal
+- **Herramientas:** Git, GitHub, Cloudflare
+
+---
+
+## 🚀 Instalación y desarrollo local
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/santigvadone/portfolio.git
+   cd portfolio
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo local:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 📦 Build para producción
+
+Para compilar los archivos optimizados listos para desplegar en el servidor:
+
+```bash
+npm run build
+```
+
+El output generado quedará disponible en la carpeta `/dist`.
+
+---
+
+## 👤 Autor
+
+- **Santiago Vadone** — _Full Stack Developer_
+- **Web:** [vadonedev.com.ar](https://vadonedev.com.ar)
