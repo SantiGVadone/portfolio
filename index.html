@@ -3,23 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image" href="./public/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Metadatos Principales -->
   <title>Santiago Vadone | Full Stack Developer</title>
   <meta name="description"
-    content="Portfolio de Santiago Vadone — Desarrollador Backend y Full Stack. Node.js, TypeScript, Express, PostgreSQL, React. Estudiante de Tecnicatura en Programación en la UTN." />
+    content="Portfolio de Santiago Vadone — Desarrollador Backend y Full Stack especializado en Node.js, TypeScript, Express, PostgreSQL y React. Estudiante en la UTN." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vadonedev.com.ar/" />
 
+  <!-- Favicon y Assets (Sin el prefijo /public para Vite) -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Open Graph (URLs absolutas requeridas por crawlers de redes) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Santiago Vadone | Backend / Full Stack Developer" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:url" content="https://vadonedev.com.ar/" />
+  <meta property="og:title" content="Santiago Vadone | Full Stack Developer" />
   <meta property="og:description"
     content="Desarrollador Backend y Full Stack. Node.js, TypeScript, Express, PostgreSQL, React." />
-  <meta property="og:image" content="/img/og-image.png" />
+  <meta property="og:image" content="https://vadonedev.com.ar/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Santiago Vadone | Backend / Full Stack Developer" />
+  <meta name="twitter:url" content="https://vadonedev.com.ar/" />
+  <meta name="twitter:title" content="Santiago Vadone | Full Stack Developer" />
   <meta name="twitter:description"
     content="Desarrollador Backend y Full Stack. Node.js, TypeScript, Express, PostgreSQL, React." />
+  <meta name="twitter:image" content="https://vadonedev.com.ar/img/og-image.png" />
+
+  <!-- Datos Estructurados (Schema JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Santiago Vadone",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://vadonedev.com.ar",
+    "image": "https://vadonedev.com.ar/img/og-image.png",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Tecnológica Nacional (UTN)"
+    },
+    "knowsAbout": [
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "Express",
+      "PostgreSQL",
+      "React",
+      "Backend Development",
+      "Full Stack Development"
+    ]
+  }
+  </script>
 </head>
 
 <body>
