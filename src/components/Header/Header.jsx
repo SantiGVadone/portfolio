@@ -35,6 +35,14 @@ export const Header = () => {
 
         <div className='header-right-container'>
           <div>
+            <a
+              href='/pdf/CV-Vadone-Santiago-2026-ESP.pdf'
+              className='header-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              CV
+            </a>
             <Link to='/blog' className='header-link'>
               Blog
             </Link>
@@ -69,6 +77,15 @@ export const Header = () => {
           <Link to='/blog' onClick={closeMenu}>
             Blog
           </Link>
+          <a
+            href='/pdf/CV-Vadone-Santiago-2026-ESP.pdf'
+            className='header-link'
+            target='_blank'
+            rel='noreferrer'
+            onClick={closeMenu}
+          >
+            CV
+          </a>
         </div>
       </nav>
     </header>
