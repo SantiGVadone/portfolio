@@ -7,10 +7,10 @@ const SEED_POSTS = [
     id: 'seed-1',
     author_name: 'Santiago Vadone',
     author_email: 'santiagogabrielvadone@outlook.com',
-    relation: 'Otro',
-    title: '¡Bienvenido al blog!',
+    relation: 'Other',
+    title: 'Welcome to the blog!',
     content:
-      'Este es el blog de VadoneDev. Dejá tu comentario o contame qué te gustaría ver por acá. Logueate con Google para publicar.',
+      "This is VadoneDev's blog. Leave a comment or tell me what you'd like to see here. Sign in with Google to publish.",
     created_at: '2026-08-01T12:00:00.000Z',
   },
 ]

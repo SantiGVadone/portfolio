@@ -3,7 +3,7 @@ export const projects = [
     id: 'salonmanager-api',
     title: 'SalonManager API',
     description:
-      'REST API para la gestión de una peluquería. Gestiona Usuarios, Roles, Turnos, Historial de clientes y catálogos de servicios.',
+      'REST API for hair salon management. Handles Users, Roles, Appointments, Client History, and service catalogs.',
     technologies: [
       'Node.js',
       'TypeScript',
@@ -21,7 +21,7 @@ export const projects = [
     id: 'inventory-hub',
     title: 'Inventory Hub',
     description:
-      'Aplicación mobile-first de gestión de inventario con actualizaciones de stock en tiempo real. Desarrollada y potenciada por una API REST. Infraestructura desplegada en un servidor Linux propio.',
+      'Mobile-first inventory management app with real-time stock updates. Powered by a REST API. Infrastructure deployed on a self-hosted Linux server.',
     technologies: [
       'React Native',
       'TypeScript',
@@ -37,7 +37,7 @@ export const projects = [
     id: 'homeserver',
     title: 'HomeServer Setup',
     description:
-      'Infraestructura de despliegue construida en un servidor Linux dedicado. Con acceso remoto por SSH, control de versiones con GitHub y aislamiento de servicios mediante Docker.',
+      'Deployment infrastructure built on a dedicated Linux server. With remote SSH access, GitHub version control, and service isolation via Docker.',
     technologies: ['Linux', 'Docker', 'SSH', 'Cloudflare'],
     image: '/img/project-3.webp',
     github: null,

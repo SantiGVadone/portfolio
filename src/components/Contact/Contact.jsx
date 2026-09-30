@@ -1,15 +1,17 @@
+import { useTranslation } from '../../hooks/useTranslation'
 import { socialLinks } from '../../data/links'
 import './Contact.css'
 
 export const Contact = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="contact section" id="contact">
-      <h2 className="section-title">Contact</h2>
+      <h2 className="section-title">{t('contact.title')}</h2>
 
       <div className="contact-content">
         <p className="contact-text">
-          Si tenés una idea, un proyecto o simplemente querés charlar sobre desarrollo, no dudes en
-          contactarme.
+          {t('contact.text')}
         </p>
 
         <div className="contact-links">
@@ -17,7 +19,7 @@ export const Contact = () => {
             href={socialLinks.email}
             className="contact-link"
           >
-            Email
+            {t('contact.email')}
           </a>
           <a
             href={socialLinks.github}
@@ -25,7 +27,7 @@ export const Contact = () => {
             rel="noopener noreferrer"
             className="contact-link"
           >
-            GitHub
+            {t('contact.github')}
           </a>
           <a
             href={socialLinks.linkedin}
@@ -33,7 +35,7 @@ export const Contact = () => {
             rel="noopener noreferrer"
             className="contact-link"
           >
-            LinkedIn
+            {t('contact.linkedin')}
           </a>
         </div>
       </div>

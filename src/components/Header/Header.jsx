@@ -1,19 +1,28 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { MenuIcon, CloseIcon } from '../icons/Icons'
+import { useTranslation } from '../../hooks/useTranslation'
 import './Header.css'
-
-const navItems = [
-  { label: 'Sobre Mi', href: '/#about' },
-  { label: 'Estudios', href: '/#studies' },
-  { label: 'Proyectos', href: '/#projects' },
-  { label: 'Stack', href: '/#stack' },
-]
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { t, language, setLanguage } = useTranslation()
 
   const closeMenu = useCallback(() => setMenuOpen(false), [])
+
+  const navItems = [
+    { label: t('nav.about'), href: '/#about' },
+    { label: t('nav.studies'), href: '/#studies' },
+    { label: t('nav.projects'), href: '/#projects' },
+    { label: t('nav.stack'), href: '/#stack' },
+  ]
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang)
+    closeMenu()
+  }
+
+  const cvPdf = t(language === 'es' ? 'cv.esp' : 'cv.eng')
 
   return (
     <header className='header'>
@@ -34,17 +43,38 @@ export const Header = () => {
         </ul>
 
         <div className='header-right-container'>
+          <div className='header-lang-switcher'>
+            {language === 'es' ? (
+              <button
+                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+                onClick={() => handleLanguageChange('en')}
+                aria-label='English'
+                aria-pressed={language === 'en'}
+              >
+                ING
+              </button>
+            ) : (
+              <button
+                className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+                onClick={() => handleLanguageChange('es')}
+                aria-label='Español'
+                aria-pressed={language === 'es'}
+              >
+                ESP
+              </button>
+            )}
+          </div>
           <div>
             <a
-              href='/pdf/CV-Vadone-Santiago-2026-ESP.pdf'
+              href={cvPdf}
               className='header-link'
               target='_blank'
               rel='noreferrer'
             >
-              CV
+              {t('nav.cv')}
             </a>
             <Link to='/blog' className='header-link'>
-              Blog
+              {t('nav.blog')}
             </Link>
           </div>
         </div>
@@ -52,7 +82,7 @@ export const Header = () => {
         <button
           className='mobile-toggle'
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={menuOpen}
         >
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -61,7 +91,7 @@ export const Header = () => {
 
       <nav
         className={`mobile-menu ${menuOpen ? 'open' : ''}`}
-        aria-label='Menú de navegación'
+        aria-label={t('nav.ariaMenu')}
       >
         {navItems.map((item) => (
           <a
@@ -73,19 +103,39 @@ export const Header = () => {
             {item.label}
           </a>
         ))}
+
         <div className='mobile-menu-social'>
           <Link to='/blog' onClick={closeMenu}>
-            Blog
+            {t('nav.blog')}
           </Link>
           <a
-            href='/pdf/CV-Vadone-Santiago-2026-ESP.pdf'
+            href={cvPdf}
             className='header-link'
             target='_blank'
             rel='noreferrer'
             onClick={closeMenu}
           >
-            CV
+            {t('nav.cv')}
           </a>
+          {language === 'es' ? (
+            <button
+              className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+              onClick={() => handleLanguageChange('en')}
+              aria-label='English'
+              aria-pressed={language === 'en'}
+            >
+              ING
+            </button>
+          ) : (
+            <button
+              className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+              onClick={() => handleLanguageChange('es')}
+              aria-label='Español'
+              aria-pressed={language === 'es'}
+            >
+              ESP
+            </button>
+          )}
         </div>
       </nav>
     </header>

@@ -1,14 +1,15 @@
+import { useTranslation } from '../../hooks/useTranslation'
 import { technologies } from '../../data/technologies'
 import './Stack.css'
 
 export const Stack = () => {
+  const { t } = useTranslation()
   const allTechs = Object.values(technologies).flat()
 
   return (
     <section className='stack section' id='stack'>
-      <h2 className='section-title'>Stack</h2>
+      <h2 className='section-title'>{t('stack.title')}</h2>
 
-      {/* Grilla unificada de tecnologías */}
       <div className='stack-grid'>
         {allTechs.map((tech, index) => (
           <div
@@ -16,7 +17,6 @@ export const Stack = () => {
             className='stack-item'
             style={{ '--glow-color': tech.color || '#3b82f6' }}
           >
-            {/* Tooltip estilizado con color de la tecnología */}
             <span className='stack-tooltip'>{tech.name}</span>
 
             {tech.icon ? (

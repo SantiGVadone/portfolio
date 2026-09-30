@@ -1,12 +1,18 @@
+import { useTranslation } from '../../hooks/useTranslation'
 import { socialLinks } from '../../data/links'
 import './About.css'
 
 export const About = () => {
+  const { t } = useTranslation()
+
   return (
     <section className='about' id='about'>
       <div className='about-inner'>
         <figure className='about-avatar'>
-          <img src='/img/profile.webp' alt='Foto animada de Santiago Vadone' />
+          <img
+            src='/img/profile.webp'
+            alt={t('about.alt')}
+          />
         </figure>
 
         <div className='about-content'>
@@ -82,20 +88,7 @@ export const About = () => {
             </li>
           </ul>
 
-          <p className='about-text'>
-            Hola! Soy <strong>Santiago Vadone</strong>, un desarrollador con
-            orientación al<strong> Backend </strong>y
-            <strong> Full Stack</strong>. Actualmente estoy cursando una carrera
-            Universitaria en Programación en la UTN. A lo largo de mis proyectos
-            he trabajado con <strong>C++</strong>, <strong>C#</strong>,{' '}
-            <strong>PHP</strong>, <strong>Node.js</strong>,{' '}
-            <strong>TypeScript</strong>, <strong>Express</strong>,{' '}
-            <strong>Oracle PL/SQL</strong>, <strong>PostgreSQL</strong>,{' '}
-            <strong>JWT</strong>, <strong>React</strong>, <strong>Linux</strong>{' '}
-            y <strong>Docker</strong>, aplicando{' '}
-            <strong>metodologias ágiles</strong> priorizando un codigo{' '}
-            <strong>mantenible</strong> y <strong>sustentable</strong>.
-          </p>
+          <p className='about-text' dangerouslySetInnerHTML={{ __html: t('about.text') }} />
         </div>
       </div>
     </section>
