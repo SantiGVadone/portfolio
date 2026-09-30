@@ -11,7 +11,7 @@ import { fetchPosts, createPost } from '../../services/postsService'
 import { isSupabaseMode } from '../../lib/supabase'
 import './Blog.css'
 
-const RELATIONS = ['Colega / Compañero', 'Cliente', 'Reclutador/a', 'Amigo / Conocido/a', 'Otro']
+const RELATIONS = ['Colleague', 'Client', 'Recruiter', 'Friend / Acquaintance', 'Other']
 
 const EMPTY_FORM = { fullName: '', relation: '', postTitle: '', postContent: '' }
 
@@ -39,7 +39,7 @@ const GoogleIcon = () => (
 const formatDate = (iso) => {
   const date = new Date(iso)
   if (Number.isNaN(date.getTime())) return ''
-  return new Intl.DateTimeFormat('es-AR', {
+  return new Intl.DateTimeFormat('en-US', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -94,7 +94,7 @@ export const Blog = () => {
       const { data, error: loadError } = await fetchPosts()
       if (!active) return
       if (loadError) {
-        setError('No se pudieron cargar los posts. Intentá de nuevo en un momento.')
+        setError('Could not load posts. Please try again in a moment.')
       } else {
         setPosts(data)
       }
@@ -115,7 +115,7 @@ export const Blog = () => {
     setSigningIn(false)
 
     if (signInError) {
-      setError('No se pudo iniciar sesión con Google. Intentá de nuevo.')
+      setError('Could not sign in with Google. Please try again.')
       return
     }
 
@@ -150,7 +150,7 @@ export const Blog = () => {
     setSuccess(null)
 
     if (!user) {
-      setError('Iniciá sesión con Google para publicar.')
+      setError('Sign in with Google to publish.')
       return
     }
 
@@ -165,7 +165,7 @@ export const Blog = () => {
     setSubmitting(false)
 
     if (createError) {
-      setError('No se pudo publicar el post. Intentá de nuevo.')
+      setError('Could not publish post. Please try again.')
       return
     }
 
@@ -186,15 +186,15 @@ export const Blog = () => {
           <span className='blog-eyebrow'>Blog de VadoneDev</span>
           <h1 className='blog-title'>Comentarios y novedades</h1>
           <p className='blog-intro'>
-            Dejá tu comentario, contá tu experiencia o proponé temas. Iniciá sesión con
-            Google y publicá tu post.
+            Leave a comment, share your experience, or suggest topics. Sign in with
+            Google and publish your post.
           </p>
         </header>
 
         {!isSupabaseMode && (
           <p className='blog-demo-note'>
-            Modo demo: los posts se guardan en tu navegador. Configurá Supabase (ver{' '}
-            <code>.env.example</code> y <code>supabase/schema.sql</code>) para compartirlos.
+            Demo mode: posts are stored in your browser. Configure Supabase (see{' '}
+            <code>.env.example</code> and <code>supabase/schema.sql</code>) to share them.
           </p>
         )}
 
@@ -218,8 +218,8 @@ export const Blog = () => {
             <div className='blog-login'>
               <p className='blog-login-text'>
                 {authLoading
-                  ? 'Cargando sesión…'
-                  : 'Para publicar necesitás iniciar sesión con tu cuenta de Google.'}
+                  ? 'Loading session…'
+                  : 'You need to sign in with your Google account to publish.'}
               </p>
               <button
                 type='button'
@@ -228,7 +228,7 @@ export const Blog = () => {
                 disabled={authLoading || signingIn}
               >
                 <GoogleIcon />
-                {signingIn ? 'Iniciando sesión…' : 'Iniciar sesión con Google'}
+                {signingIn ? 'Signing in…' : 'Sign in with Google'}
               </button>
             </div>
           )}
@@ -247,7 +247,7 @@ export const Blog = () => {
                 <span className='blog-user-email'>{user.email}</span>
               </div>
               <button type='button' className='btn-signout' onClick={handleSignOut}>
-                Cerrar sesión
+                Sign out
               </button>
             </div>
           )}
@@ -256,7 +256,7 @@ export const Blog = () => {
             <div className='blog-form-grid'>
               <div className='blog-field'>
                 <label className='blog-label' htmlFor='blog-fullname'>
-                  Nombre completo
+                  Full name
                 </label>
                 <input
                   id='blog-fullname'
@@ -272,7 +272,7 @@ export const Blog = () => {
 
               <div className='blog-field'>
                 <label className='blog-label' htmlFor='blog-relation'>
-                  Relación con VadoneDev
+                  Relation to VadoneDev
                 </label>
                 <select
                   id='blog-relation'
@@ -283,7 +283,7 @@ export const Blog = () => {
                   required
                 >
                   <option value='' disabled>
-                    Seleccioná una opción
+                    Select an option
                   </option>
                   {RELATIONS.map((relation) => (
                     <option key={relation} value={relation}>
@@ -296,7 +296,7 @@ export const Blog = () => {
 
             <div className='blog-field'>
               <label className='blog-label' htmlFor='blog-post-title'>
-                Título
+                Title
               </label>
               <input
                 id='blog-post-title'
@@ -304,7 +304,7 @@ export const Blog = () => {
                 type='text'
                 value={form.postTitle}
                 onChange={handleInputChange('postTitle')}
-                placeholder='Título de tu post'
+                placeholder='Title of your post'
                 disabled={!user}
                 required
               />
@@ -312,14 +312,14 @@ export const Blog = () => {
 
             <div className='blog-field'>
               <label className='blog-label' htmlFor='blog-post-content'>
-                Descripción / Comentario
+                Description / Comment
               </label>
               <textarea
                 id='blog-post-content'
                 className='blog-input blog-textarea'
                 value={form.postContent}
                 onChange={handleInputChange('postContent')}
-                placeholder='Contá lo que quieras'
+                placeholder='Tell us whatever you want'
                 rows='5'
                 disabled={!user}
                 required
@@ -331,7 +331,7 @@ export const Blog = () => {
               className='btn-submit'
               disabled={!canPublish || submitting}
             >
-              {submitting ? 'Publicando…' : 'Publicar'}
+              {submitting ? 'Publishing…' : 'Publish'}
             </button>
           </form>
         </section>
@@ -341,10 +341,10 @@ export const Blog = () => {
             Comentarios
           </h2>
 
-          {postsLoading && <p className='blog-empty'>Cargando posts…</p>}
+          {postsLoading && <p className='blog-empty'>Loading posts…</p>}
 
           {!postsLoading && posts.length === 0 && (
-            <p className='blog-empty'>Todavía no hay posts. ¡Sé el primero en comentar!</p>
+            <p className='blog-empty'>No posts yet. Be the first to comment!</p>
           )}
 
           {!postsLoading && posts.length > 0 && (
