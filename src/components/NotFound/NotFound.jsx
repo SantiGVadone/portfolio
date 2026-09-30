@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from '../../hooks/useTranslation'
 import './NotFound.css'
 
 export const NotFound = () => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const meta = document.createElement('meta')
     meta.name = 'robots'
@@ -19,12 +22,12 @@ export const NotFound = () => {
       <p className='notfound-code' aria-hidden='true'>
         404
       </p>
-      <h1 className='notfound-title'>Página no encontrada</h1>
+      <h1 className='notfound-title'>{t('notfound.title')}</h1>
       <p className='notfound-text'>
-        La ruta que buscás no existe dentro del sitio.
+        {t('notfound.text')}
       </p>
       <Link to='/' className='notfound-btn'>
-        Volver al inicio
+        {t('notfound.button')}
       </Link>
     </main>
   )
