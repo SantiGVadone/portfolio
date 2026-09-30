@@ -49,10 +49,10 @@ export const ProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               className='project-link'
-              aria-label={`Código fuente de ${title}`}
+              aria-label={`Source code for ${title}`}
             >
               <GithubIcon size={20} />
-              Código
+              Code
             </a>
           )}
           {demo && (
@@ -61,10 +61,10 @@ export const ProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               className='project-link'
-              aria-label={`Demo de ${title}`}
+              aria-label={`Demo for ${title}`}
             >
               <ExternalLinkIcon size={20} />
-              Link
+              Demo
             </a>
           )}
         </div>
@@ -74,11 +74,11 @@ export const ProjectCard = ({
         {image ? (
           <img
             src={image}
-            alt={`Captura del proyecto ${title}`}
+            alt={`Screenshot of project ${title}`}
             loading='lazy'
           />
         ) : (
-          <div className='project-image-placeholder'>Sin imagen</div>
+          <div className='project-image-placeholder'>No image</div>
         )}
       </div>
     </article>
