@@ -5,7 +5,7 @@ import { About } from './components/About/About'
 import { Journey } from './components/Journey/Journey'
 import { Projects } from './components/Projects/Projects'
 import { Stack } from './components/Stack/Stack'
-import { Blog } from './components/Blog/Blog'
+import { Reviews } from './components/Reviews/Reviews'
 import { NotFound } from './components/NotFound/NotFound'
 import { Footer } from './components/Footer/Footer'
 import { LanguageProvider } from './context/LanguageContext'
@@ -30,7 +30,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Portfolio />} />
-          <Route path='/blog' element={<Blog />} />
+          <Route path='/reviews' element={<Reviews />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
