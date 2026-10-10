@@ -14,27 +14,22 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          # Limpiar barras finales si existen
           CLEAN_URL="${SUPABASE_URL%/}"
 
-          echo "Enviando ping a: ${CLEAN_URL}/rest/v1/"
-          
-          # Hacemos la peticion mostrando el codigo HTTP de respuesta
+          # Usamos /auth/v1/health que acepta peticiones publicas y mantiene el proyecto activo
           HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
-            -X GET "${CLEAN_URL}/rest/v1/" \
+            -X GET "${CLEAN_URL}/auth/v1/health" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")
 
-          echo "Codigo de respuesta HTTP: $HTTP_STATUS"
-          echo "Cuerpo de la respuesta:"
+          echo "Codigo de respuesta: $HTTP_STATUS"
           cat response.txt
           echo ""
 
-          # Supabase suele responder 200 si la API esta lista
-          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+          if [ "$HTTP_STATUS" -eq 200 ]; then
             echo "Ping exitoso!"
             exit 0
           else
-            echo "Error en la conexion con Supabase"
+            echo "Fallo el ping"
             exit 1
           fi
