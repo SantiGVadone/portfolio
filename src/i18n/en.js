@@ -12,10 +12,11 @@ export const en = {
   },
   hero: {
     role: 'Fullstack Developer',
-    description: 'I\'m always looking to learn and improve my skills. I\'m passionate about creating innovative and efficient solutions that have a positive impact on people\'s lives.',
+    description:
+      "I'm always looking to learn and improve my skills. I'm passionate about creating innovative and efficient solutions that have a positive impact on people's lives.",
   },
   about: {
-    text: 'Hi! I\'m <strong>Santiago Vadone</strong>, a developer with a focus on <strong>Backend</strong> and <strong>Fullstack</strong>. I\'m currently pursuing a University Degree in Programming at UTN. Throughout my projects, I\'ve worked with <strong>C++</strong>, <strong>C#</strong>, <strong>PHP</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>Express</strong>, <strong>Oracle PL/SQL</strong>, <strong>PostgreSQL</strong>, <strong>JWT</strong>, <strong>React</strong>, <strong>Linux</strong> and <strong>Docker</strong>, applying <strong>agile methodologies</strong> prioritizing <strong>maintainable</strong> and <strong>sustainable</strong> code.',
+    text: "Hi! I'm <strong>Santiago Vadone</strong>, a developer with a focus on <strong>Backend</strong> and <strong>Fullstack</strong>. I'm currently pursuing a University Degree in Programming at UTN. Throughout my projects, I've worked with <strong>C++</strong>, <strong>C#</strong>, <strong>PHP</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>Express</strong>, <strong>Oracle PL/SQL</strong>, <strong>PostgreSQL</strong>, <strong>JWT</strong>, <strong>React</strong>, <strong>Linux</strong> and <strong>Docker</strong>, applying <strong>agile methodologies</strong> prioritizing <strong>maintainable</strong> and <strong>sustainable</strong> code.",
     alt: 'Animated photo of Santiago Vadone',
   },
   journey: {
@@ -25,15 +26,18 @@ export const en = {
     title: 'Projects',
     salonmanager: {
       title: 'SalonManagement API',
-      description: 'REST API for hair salon management. Handles Users, Roles, Appointments, Client History, and service catalogs.',
+      description:
+        'REST API for hair salon management. Handles Users, Roles, Appointments, Client History, and service catalogs.',
     },
     inventory: {
       title: 'Inventory Hub',
-      description: 'Mobile-first inventory management app with real-time stock updates. Powered by a REST API. Infrastructure deployed on a self-hosted Linux server.',
+      description:
+        'Mobile-first inventory management app with real-time stock updates. Powered by a REST API. Infrastructure deployed on a self-hosted Linux server.',
     },
     homeserver: {
       title: 'HomeServer Setup',
-      description: 'Deployment infrastructure built on a dedicated Linux server. With remote SSH access, GitHub version control, and service isolation via Docker.',
+      description:
+        'Deployment infrastructure built on a dedicated Linux server. With remote SSH access, GitHub version control, and service isolation via Docker.',
     },
   },
   stack: {
@@ -41,7 +45,7 @@ export const en = {
   },
   contact: {
     title: 'Contact',
-    text: 'If you have an idea, a project, or just want to chat about development, don\'t hesitate to contact me.',
+    text: "If you have an idea, a project, or just want to chat about development, don't hesitate to contact me.",
     email: 'Email',
     github: 'GitHub',
     linkedin: 'LinkedIn',
@@ -49,8 +53,10 @@ export const en = {
   blog: {
     eyebrow: 'VadoneDev Blog',
     title: 'Comments & Updates',
-    intro: 'Leave a comment, share your experience, or suggest topics. Sign in with Google and publish your post.',
-    demoNote: 'Demo mode: posts are stored in your browser. Configure Supabase (see <code>.env.example</code> and <code>supabase/schema.sql</code>) to share them.',
+    intro:
+      'Leave a comment, share your experience, or suggest topics. Sign in with Google and publish your post.',
+    demoNote:
+      'Demo mode: posts are stored in your browser. Configure Supabase (see <code>.env.example</code> and <code>supabase/schema.sql</code>) to share them.',
     publish: 'Publish',
     publishing: 'Publishing…',
     signIn: 'Sign in with Google',
@@ -73,13 +79,19 @@ export const en = {
     commentsTitle: 'Comments',
     loadingPosts: 'Loading posts…',
     noPosts: 'No posts yet. Be the first to comment!',
-    relations: ['Colleague', 'Client', 'Recruiter', 'Friend / Acquaintance', 'Other'],
+    relations: [
+      'Colleague',
+      'Client',
+      'Recruiter',
+      'Friend / Acquaintance',
+      'Other',
+    ],
     author: 'Author',
     date: 'Date',
   },
   notfound: {
     title: 'Page not found',
-    text: 'The page you\'re looking for doesn\'t exist.',
+    text: "The page you're looking for doesn't exist.",
     button: 'Back to home',
   },
   footer: {
@@ -91,6 +103,9 @@ export const en = {
   },
   experience: {
     utn: {
+      title: 'University Degree in Programming',
+      institution: 'National Technological University',
+      period: '2025 - Present',
       highlights: [
         'Design and implementation of <strong class="highlight">software</strong> applying best practices and design patterns.',
         'Modeling and management of <strong class="highlight">databases</strong> both relational and non-relational.',
@@ -99,6 +114,9 @@ export const en = {
       ],
     },
     'utn-python': {
+      title: 'University Python Course',
+      institution: 'National Technological University',
+      period: '2021 - 2021',
       highlights: [
         'Development of <strong class="highlight">automation</strong> scripts for repetitive task optimization.',
         'Logical problem solving through structured and object-oriented programming <strong class="highlight">(OOP)</strong>.',
@@ -107,6 +125,9 @@ export const en = {
       ],
     },
     electronics: {
+      title: 'Electronics Technician',
+      institution: 'Technical School Nº1 Merlo',
+      period: '2015 - 2021',
       highlights: [
         'Design, etching, and assembly of <strong class="highlight">printed circuit boards (PCB)</strong> and electronic boards.',
         'Precision soldering, measurement, and diagnosis of analog and digital components.',
@@ -119,4 +140,4 @@ export const en = {
     esp: '/pdf/CV-Vadone-Santiago-2026-ESP.pdf',
     eng: '/pdf/CV-Vadone-Santiago-2026-ING.pdf',
   },
-};
+}

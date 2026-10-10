@@ -12,7 +12,8 @@ export const es = {
   },
   hero: {
     role: 'Full Stack Developer',
-    description: 'Siempre estoy buscando aprender y mejorar mis habilidades. Me apasiona crear soluciones innovadoras y eficientes que tengan un impacto positivo en la vida de las personas.',
+    description:
+      'Siempre estoy buscando aprender y mejorar mis habilidades. Me apasiona crear soluciones innovadoras y eficientes que tengan un impacto positivo en la vida de las personas.',
   },
   about: {
     text: 'Hola! Soy <strong>Santiago Vadone</strong>, un desarrollador con orientación al <strong>Backend</strong> y <strong>Full Stack</strong>. Actualmente estoy cursando una carrera Universitaria en Programación en la UTN. A lo largo de mis proyectos he trabajado con <strong>C++</strong>, <strong>C#</strong>, <strong>PHP</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>Express</strong>, <strong>Oracle PL/SQL</strong>, <strong>PostgreSQL</strong>, <strong>JWT</strong>, <strong>React</strong>, <strong>Linux</strong> y <strong>Docker</strong>, aplicando <strong>metodologías ágiles</strong> priorizando un código <strong>mantenible</strong> y <strong>sustentable</strong>.',
@@ -25,15 +26,18 @@ export const es = {
     title: 'Proyectos',
     salonmanager: {
       title: 'SalonManagement API',
-      description: 'REST API para la gestión de una peluquería. Gestiona Usuarios, Roles, Turnos, Historial de clientes y catálogos de servicios.',
+      description:
+        'REST API para la gestión de una peluquería. Gestiona Usuarios, Roles, Turnos, Historial de clientes y catálogos de servicios.',
     },
     inventory: {
       title: 'Inventory Hub',
-      description: 'Aplicación mobile de gestión de inventario. Infraestructura desplegada en un servidor Linux propio.',
+      description:
+        'Aplicación mobile de gestión de inventario. Infraestructura desplegada en un servidor Linux propio.',
     },
     homeserver: {
       title: 'HomeServer Setup',
-      description: 'Infraestructura de despliegue construida en un servidor Linux dedicado. Con acceso remoto por SSH, control de versiones con GitHub y aislamiento de servicios mediante Docker.',
+      description:
+        'Infraestructura de despliegue construida en un servidor Linux dedicado. Con acceso remoto por SSH, control de versiones con GitHub y aislamiento de servicios mediante Docker.',
     },
   },
   stack: {
@@ -49,15 +53,18 @@ export const es = {
   blog: {
     eyebrow: 'Blog de VadoneDev',
     title: 'Comentarios y novedades',
-    intro: 'Dejá tu comentario, contá tu experiencia o proponé temas. Iniciá sesión con Google y publicá tu post.',
-    demoNote: 'Modo demo: los posts se guardan en tu navegador. Configurá Supabase (ver <code>.env.example</code> y <code>supabase/schema.sql</code>) para compartirlos.',
+    intro:
+      'Dejá tu comentario, contá tu experiencia o proponé temas. Iniciá sesión con Google y publicá tu post.',
+    demoNote:
+      'Modo demo: los posts se guardan en tu navegador. Configurá Supabase (ver <code>.env.example</code> y <code>supabase/schema.sql</code>) para compartirlos.',
     publish: 'Publicar',
     publishing: 'Publicando…',
     signIn: 'Iniciar sesión con Google',
     signingIn: 'Iniciando sesión…',
     signOut: 'Cerrar sesión',
     loadingSession: 'Cargando sesión…',
-    needSignIn: 'Para publicar necesitás iniciar sesión con tu cuenta de Google.',
+    needSignIn:
+      'Para publicar necesitás iniciar sesión con tu cuenta de Google.',
     fullName: 'Nombre completo',
     fullNamePlaceholder: 'Tu nombre y apellido',
     relation: 'Relación con VadoneDev',
@@ -68,12 +75,19 @@ export const es = {
     postContentPlaceholder: 'Contá lo que quieras',
     errorPublish: 'No se pudo publicar el post. Intentá de nuevo.',
     errorSignIn: 'No se pudo iniciar sesión con Google. Intentá de nuevo.',
-    errorLoadPosts: 'No se pudieron cargar los posts. Intentá de nuevo en un momento.',
+    errorLoadPosts:
+      'No se pudieron cargar los posts. Intentá de nuevo en un momento.',
     successPublish: '¡Publicado! Gracias por participar.',
     commentsTitle: 'Comentarios',
     loadingPosts: 'Cargando posts…',
     noPosts: 'Todavía no hay posts. ¡Sé el primero en comentar!',
-    relations: ['Colega / Compañero', 'Cliente', 'Reclutador/a', 'Amigo / Conocido/a', 'Otro'],
+    relations: [
+      'Colega / Compañero',
+      'Cliente',
+      'Reclutador/a',
+      'Amigo / Conocido/a',
+      'Otro',
+    ],
     author: 'Autor',
     date: 'Fecha',
   },
@@ -91,6 +105,9 @@ export const es = {
   },
   experience: {
     utn: {
+      title: 'Tecnicatura Universitaria en Programación',
+      institution: 'Universidad Tecnológica Nacional',
+      period: '2025 - Presente',
       highlights: [
         'Diseño e implementación de <strong class="highlight">software</strong> aplicando buenas prácticas y patrones de diseño.',
         'Modelado y gestión de <strong class="highlight">bases de datos</strong> relacionales y no relacionales.',
@@ -99,6 +116,9 @@ export const es = {
       ],
     },
     'utn-python': {
+      title: 'Curso Universitario de Python',
+      institution: 'Universidad Tecnológica Nacional',
+      period: '2021 - 2021',
       highlights: [
         'Desarrollo de scripts de <strong class="highlight">automatización</strong> para optimización de tareas repetitivas.',
         'Resolución de problemas lógicos mediante programación estructurada y orientada a objetos <strong class="highlight">(POO)</strong>.',
@@ -107,6 +127,9 @@ export const es = {
       ],
     },
     electronics: {
+      title: 'Tecnicatura Universitaria en Electrónica',
+      institution: 'Escuela Técnica Nº1 Merlo',
+      period: '2015 - 2021',
       highlights: [
         'Diseño, grabado y ensamblado de <strong class="highlight">circuitos impresos (PCB)</strong> y plaquetas electrónicas.',
         'Soldadura de precisión, medición y diagnóstico de componentes analógicos y digitales.',
@@ -119,4 +142,4 @@ export const es = {
     esp: '/pdf/CV-Vadone-Santiago-2026-ESP.pdf',
     eng: '/pdf/CV-Vadone-Santiago-2026-ING.pdf',
   },
-};
+}

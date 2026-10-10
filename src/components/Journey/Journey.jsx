@@ -7,23 +7,23 @@ export const Journey = () => {
   const experienceItems = [
     {
       id: 'utn',
-      title: 'University Degree in Programming',
-      institution: 'National Technological University',
-      period: '2025 - Present',
+      title: 'experience.utn.title',
+      institution: 'experience.utn.institution',
+      period: 'experience.utn.period',
       highlightsKey: 'experience.utn.highlights',
     },
     {
       id: 'utn-python',
-      title: 'University Python Course',
-      institution: 'National Technological University',
-      period: '2021 - 2021',
+      title: 'experience.utn-python.title',
+      institution: 'experience.utn-python.institution',
+      period: 'experience.utn-python.period',
       highlightsKey: 'experience.utn-python.highlights',
     },
     {
       id: 'electronics',
-      title: 'Electronics Technician',
-      institution: 'Technical School Nº1 Merlo',
-      period: '2015 - 2021',
+      title: 'experience.electronics.title',
+      institution: 'experience.electronics.institution',
+      period: 'experience.electronics.period',
       highlightsKey: 'experience.electronics.highlights',
     },
   ]
@@ -42,13 +42,19 @@ export const Journey = () => {
               <div className='border-card-content'>
                 <div className='journey-header'>
                   <h3 className='journey-title'>{item.title}</h3>
-                  <span className='journey-institution'>{item.institution}</span>
+                  <span className='journey-institution'>
+                    {item.institution}
+                  </span>
                 </div>
                 <time className='journey-period'>{item.period}</time>
                 <ul className='journey-highlights'>
-                  {Array.isArray(highlights) && highlights.map((point, index) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
-                  ))}
+                  {Array.isArray(highlights) &&
+                    highlights.map((point, index) => (
+                      <li
+                        key={index}
+                        dangerouslySetInnerHTML={{ __html: point }}
+                      />
+                    ))}
                 </ul>
               </div>
             </article>
