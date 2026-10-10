@@ -1,0 +1,22 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 12:00 UTC
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Permite probarlo manualmente cuando quieras
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Database
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl -s -f \
+            -X GET "$SUPABASE_URL/rest/v1/?apikey=$SUPABASE_ANON_KEY" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" > /dev/null
+          echo "Supabase recibió el ping correctamente!"
