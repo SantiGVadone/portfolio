@@ -2,7 +2,6 @@ name: Supabase Keep-Alive
 
 on:
   schedule:
-    # Se ejecuta todos los días a las 12:00 UTC
     - cron: '0 12 * * *'
   workflow_dispatch:
 
@@ -15,8 +14,27 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          curl -s -f \
-            -X GET "$SUPABASE_URL/rest/v1/?apikey=$SUPABASE_ANON_KEY" \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" > /dev/null
-          echo "Supabase recibió el ping correctamente!"
+          # Limpiar barras finales si existen
+          CLEAN_URL="${SUPABASE_URL%/}"
+
+          echo "Enviando ping a: ${CLEAN_URL}/rest/v1/"
+          
+          # Hacemos la peticion mostrando el codigo HTTP de respuesta
+          HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
+            -X GET "${CLEAN_URL}/rest/v1/" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")
+
+          echo "Codigo de respuesta HTTP: $HTTP_STATUS"
+          echo "Cuerpo de la respuesta:"
+          cat response.txt
+          echo ""
+
+          # Supabase suele responder 200 si la API esta lista
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo "Ping exitoso!"
+            exit 0
+          else
+            echo "Error en la conexion con Supabase"
+            exit 1
+          fi
