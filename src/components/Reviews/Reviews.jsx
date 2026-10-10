@@ -9,11 +9,22 @@ import {
 } from '../../services/authService'
 import { fetchPosts, createPost } from '../../services/postsService'
 import { isSupabaseMode } from '../../lib/supabase'
-import './Blog.css'
+import './Reviews.css'
 
-const RELATIONS = ['Colleague', 'Client', 'Recruiter', 'Friend / Acquaintance', 'Other']
+const RELATIONS = [
+  'Colleague',
+  'Client',
+  'Recruiter',
+  'Friend / Acquaintance',
+  'Other',
+]
 
-const EMPTY_FORM = { fullName: '', relation: '', postTitle: '', postContent: '' }
+const EMPTY_FORM = {
+  fullName: '',
+  relation: '',
+  postTitle: '',
+  postContent: '',
+}
 
 const GoogleIcon = () => (
   <svg viewBox='0 0 48 48' className='google-icon' aria-hidden='true'>
@@ -54,7 +65,7 @@ const getInitials = (name) =>
     .map((part) => part[0]?.toUpperCase() ?? '')
     .join('')
 
-export const Blog = () => {
+export const Reviews = () => {
   const [user, setUser] = useState(null)
   const [authLoading, setAuthLoading] = useState(true)
   const [posts, setPosts] = useState([])
@@ -186,15 +197,16 @@ export const Blog = () => {
           <span className='blog-eyebrow'>Blog de VadoneDev</span>
           <h1 className='blog-title'>Comentarios y novedades</h1>
           <p className='blog-intro'>
-            Leave a comment, share your experience, or suggest topics. Sign in with
-            Google and publish your post.
+            Leave a comment, share your experience, or suggest topics. Sign in
+            with Google and publish your post.
           </p>
         </header>
 
         {!isSupabaseMode && (
           <p className='blog-demo-note'>
             Demo mode: posts are stored in your browser. Configure Supabase (see{' '}
-            <code>.env.example</code> and <code>supabase/schema.sql</code>) to share them.
+            <code>.env.example</code> and <code>supabase/schema.sql</code>) to
+            share them.
           </p>
         )}
 
@@ -238,7 +250,10 @@ export const Blog = () => {
               {avatar ? (
                 <img className='blog-user-avatar' src={avatar} alt='' />
               ) : (
-                <span className='blog-user-avatar blog-user-avatar-fallback' aria-hidden='true'>
+                <span
+                  className='blog-user-avatar blog-user-avatar-fallback'
+                  aria-hidden='true'
+                >
                   {initials}
                 </span>
               )}
@@ -246,7 +261,11 @@ export const Blog = () => {
                 <span className='blog-user-name'>{getUserFullName(user)}</span>
                 <span className='blog-user-email'>{user.email}</span>
               </div>
-              <button type='button' className='btn-signout' onClick={handleSignOut}>
+              <button
+                type='button'
+                className='btn-signout'
+                onClick={handleSignOut}
+              >
                 Sign out
               </button>
             </div>
@@ -357,7 +376,9 @@ export const Blog = () => {
                   </header>
                   <div className='post-meta'>
                     <span className='post-author'>{post.author_name}</span>
-                    <span className='post-date'>{formatDate(post.created_at)}</span>
+                    <span className='post-date'>
+                      {formatDate(post.created_at)}
+                    </span>
                   </div>
                   <p className='post-content'>{post.content}</p>
                 </article>
