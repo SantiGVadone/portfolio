@@ -74,7 +74,7 @@ export const Header = () => {
               {t('nav.cv')}
             </a>
             <Link to='/reviews' className='header-link'>
-              {t(`${language === 'es' ? 'nav.Reseñas' : 'nav.Reviews'}`)}
+              {t(`${language === 'es' ? 'Reseñas' : 'Reviews'}`)}
             </Link>
           </div>
         </div>
@@ -106,7 +106,7 @@ export const Header = () => {
 
         <div className='mobile-menu-social'>
           <Link to='/reviews' onClick={closeMenu}>
-            {t(`${language === 'es' ? 'nav.Reseñas' : 'nav.Reviews'}`)}
+            {t(`${language === 'es' ? 'Reseñas' : 'Reviews'}`)}
           </Link>
           <a
             href={cvPdf}
