@@ -7,23 +7,23 @@ export const Journey = () => {
   const experienceItems = [
     {
       id: 'utn',
-      title: 'experience.utn.title',
-      institution: 'experience.utn.institution',
-      period: 'experience.utn.period',
+      title: t('experience.utn.title'),
+      institution: t('experience.utn.institution'),
+      period: t('experience.utn.period'),
       highlightsKey: 'experience.utn.highlights',
     },
     {
       id: 'utn-python',
-      title: 'experience.utn-python.title',
-      institution: 'experience.utn-python.institution',
-      period: 'experience.utn-python.period',
+      title: t('experience.utn-python.title'),
+      institution: t('experience.utn-python.institution'),
+      period: t('experience.utn-python.period'),
       highlightsKey: 'experience.utn-python.highlights',
     },
     {
       id: 'electronics',
-      title: 'experience.electronics.title',
-      institution: 'experience.electronics.institution',
-      period: 'experience.electronics.period',
+      title: t('experience.electronics.title'),
+      institution: t('experience.electronics.institution'),
+      period: t('experience.electronics.period'),
       highlightsKey: 'experience.electronics.highlights',
     },
   ]
