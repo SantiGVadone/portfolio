@@ -2,7 +2,8 @@ name: Supabase Keep-Alive
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    # Se ejecuta cada 3 días a las 12:00 UTC (más que suficiente para el margen de 7 días)
+    - cron: '0 12 */3 * *'
   workflow_dispatch:
 
 jobs:
@@ -16,9 +17,10 @@ jobs:
         run: |
           CLEAN_URL="${SUPABASE_URL%/}"
 
-          # Usamos /auth/v1/health que acepta peticiones publicas y mantiene el proyecto activo
+          # Consultamos PostgREST (/rest/v1/) para forzar lectura real en PostgreSQL
+          # Si tienes una tabla específica, puedes usar "${CLEAN_URL}/rest/v1/tu_tabla?limit=1"
           HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
-            -X GET "${CLEAN_URL}/auth/v1/health" \
+            -X GET "${CLEAN_URL}/rest/v1/?limit=1" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")
 
@@ -26,10 +28,11 @@ jobs:
           cat response.txt
           echo ""
 
-          if [ "$HTTP_STATUS" -eq 200 ]; then
-            echo "Ping exitoso!"
+          # 200 (OK), 206 (Partial Content) o 404 (Swagger/Root no listado) confirman que PostgREST y Postgres atendieron la solicitud
+          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 206 ] || [ "$HTTP_STATUS" -eq 404 ]; then
+            echo "Ping exitoso a PostgreSQL!"
             exit 0
           else
-            echo "Fallo el ping"
+            echo "Fallo el ping - Codigo: $HTTP_STATUS"
             exit 1
           fi
