@@ -17,10 +17,11 @@ jobs:
         run: |
           CLEAN_URL="${SUPABASE_URL%/}"
 
-          # Consultamos PostgREST (/rest/v1/) para forzar lectura real en PostgreSQL
-          # Si tienes una tabla específica, puedes usar "${CLEAN_URL}/rest/v1/tu_tabla?limit=1"
+          # Consultamos una tabla real para forzar una lectura en PostgreSQL.
+          # Ojo: la raíz /rest/v1/ devuelve 401 con la anon key
+          # ("Only the service_role API key can be used for this endpoint").
           HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
-            -X GET "${CLEAN_URL}/rest/v1/?limit=1" \
+            -X GET "${CLEAN_URL}/rest/v1/blog_posts?select=id&limit=1" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")
 
@@ -28,8 +29,8 @@ jobs:
           cat response.txt
           echo ""
 
-          # 200 (OK), 206 (Partial Content) o 404 (Swagger/Root no listado) confirman que PostgREST y Postgres atendieron la solicitud
-          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 206 ] || [ "$HTTP_STATUS" -eq 404 ]; then
+          # 200 (OK) o 206 (Partial Content) confirman que PostgREST y Postgres atendieron la solicitud
+          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 206 ]; then
             echo "Ping exitoso a PostgreSQL!"
             exit 0
           else
