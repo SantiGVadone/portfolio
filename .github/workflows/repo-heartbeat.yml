@@ -1,0 +1,55 @@
+name: Repo Activity Heartbeat
+
+# GitHub desactiva los workflows programados de repos PÚBLICOS cuando pasan
+# 60 días sin actividad (commits/pushes). Este workflow revisa cada semana y,
+# si el último latido tiene 50 días o más, hace un commit mínimo para mantener
+# el repositorio "activo" y que el keep-alive de Supabase no se desactive.
+on:
+  schedule:
+    - cron: '17 4 * * 1' # todos los lunes 04:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Actualizar latido si hace falta
+        run: |
+          FILE=".github/heartbeat.txt"
+          NOW=$(date -u +%s)
+
+          if [ -f "$FILE" ]; then
+            LAST=$(tr -d '[:space:]' < "$FILE")
+          else
+            LAST=0
+          fi
+
+          case "$LAST" in
+            ''|*[!0-9]*) LAST=0 ;;
+          esac
+
+          AGE_DAYS=$(( (NOW - LAST) / 86400 ))
+          echo "Último latido hace ${AGE_DAYS} días."
+
+          if [ "$AGE_DAYS" -lt 50 ]; then
+            echo "Todavía no hace falta: faltan $((50 - AGE_DAYS)) días para el próximo commit."
+            exit 0
+          fi
+
+          echo "$NOW" > "$FILE"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$FILE"
+          git commit -m "chore: repo activity heartbeat"
+          git push
+
+          echo "✅ Latido actualizado para mantener activos los workflows programados."
