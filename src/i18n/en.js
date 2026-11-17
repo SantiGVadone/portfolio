@@ -137,7 +137,7 @@ export const en = {
     },
   },
   cv: {
-    esp: '/pdf/CV-Vadone-Santiago-2026-ESP.pdf',
-    eng: '/pdf/CV-Vadone-Santiago-2026-ING.pdf',
+    esp: '/pdf/CV-Vadone-Santiago-Fullstack-ES.pdf',
+    eng: '/pdf/CV-Vadone-Santiago-Fullstack-ING.pdf',
   },
 }
